@@ -3,19 +3,373 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment | Compus India</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <title>BOOK APPOINTMENT | COMPUS INDIA</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("6CPHqFDm-JiJAv4DJ");
-    })();
-  </script>
+  <style>
+    :root {
+      --primary-color: #1a3a6e;
+      --secondary-color: #f8b400;
+      --accent-color: #4e8cff;
+      --dark-color: #0a192f;
+      --light-color: #f8f9fa;
+      --text-color: #333;
+      --text-light: #6c757d;
+      --font-main: 'Montserrat', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-main);
+      color: var(--text-color);
+      background-color: #f5f7fa;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    .header {
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    
+    .header.scrolled {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+    
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    .main-nav li {
+      margin-left: 30px;
+      position: relative;
+    }
+    
+    .main-nav a {
+      text-decoration: none;
+      color: var(--dark-color);
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .main-nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      bottom: -5px;
+      left: 0;
+      transition: var(--transition);
+    }
+    
+    .main-nav a:hover:after {
+      width: 100%;
+    }
+    
+    .main-nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 4px 15px rgba(26, 58, 110, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background-color: #142a50;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 58, 110, 0.4);
+    }
+    
+    /* Main Content */
+    main {
+      padding: 180px 0 100px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    }
+    
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 60px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    h1:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    h3:after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary-color);
+      bottom: -8px;
+      left: 0;
+    }
+    
+    h4 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    /* Appointment Container */
+    .appointment-container {
+      display: flex;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards 0.3s;
+    }
+    
+    .appointment-form {
+      flex: 1;
+      padding: 50px;
+      background: white;
+    }
+    
+    .appointment-info {
+      flex: 0 0 35%;
+      padding: 50px;
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .appointment-info a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .appointment-info a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    .working-hours {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .form-row .form-group {
+      flex: 1;
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: var(--font-main);
+      font-size: 15px;
+      transition: var(--transition);
+      background-color: #f9f9f9;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+      background-color: white;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 15px;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-delay-1 {
+      animation-delay: 0.5s;
+    }
+    
+    .animate-delay-2 {
+      animation-delay: 0.8s;
+    }
+    
+    /* Success Message */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 50px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+    
+    .success-message i {
+      font-size: 60px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    
+    .success-message h2 {
+      font-family: var(--font-heading);
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    .success-message p {
+      margin-bottom: 25px;
+      color: var(--text-light);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .appointment-container {
+        flex-direction: column;
+      }
+      
+      .appointment-info {
+        padding: 30px;
+      }
+      
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      
+      .appointment-form, .appointment-info {
+        padding: 30px;
+      }
+      
+      main {
+        padding: 150px 0 80px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 30px;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header (same as index.html) -->
+  <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="logo">
@@ -26,11 +380,11 @@
       
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="nav-cta"><a href="appointment.html" class="btn btn-primary">Book Appointment</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT Us</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li class="nav-cta"><a href="appointment.html" class="btn btn-primary">BOOK APPOINTMENT</a></li>
         </ul>
       </nav>
       
@@ -42,23 +396,23 @@
     </div>
   </header>
 
-  <main class="container fade-in" style="padding: 80px 20px;">
-    <h1 style="text-align: center; margin-bottom: 40px;">Book Your Consultation</h1>
+  <main class="container">
+    <h1 class="animate__animated animate__fadeIn">Schedule Your Consultation</h1>
     
-    <div class="appointment-container">
+    <div id="appointment-section" class="appointment-container">
       <form id="appointment-form" class="appointment-form">
-        <div class="form-group">
-          <input type="text" name="user_name" placeholder="Full Name" required>
+        <div class="form-group animate__animated animate__fadeIn animate-delay-1">
+          <input type="text" name="user_name" placeholder="Full Name*" required>
         </div>
-        <div class="form-group">
-          <input type="email" name="user_email" placeholder="Email Address" required>
+        <div class="form-group animate__animated animate__fadeIn animate-delay-1">
+          <input type="email" name="user_email" placeholder="Email Address*" required>
         </div>
-        <div class="form-group">
-          <input type="tel" name="user_phone" placeholder="Phone Number" required>
+        <div class="form-group animate__animated animate__fadeIn animate-delay-1">
+          <input type="tel" name="user_phone" placeholder="Phone Number*" required>
         </div>
-        <div class="form-group">
+        <div class="form-group animate__animated animate__fadeIn animate-delay-2">
           <select name="service_type" required>
-            <option value="">Select Service</option>
+            <option value="">Select Service*</option>
             <option value="Business Consulting">Business Consulting</option>
             <option value="Tax Solutions">Tax Solutions</option>
             <option value="Financial Advisory">Financial Advisory</option>
@@ -67,33 +421,102 @@
           </select>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <input type="date" name="appointment_date" placeholder="Preferred Date" required>
+          <div class="form-group animate__animated animate__fadeIn animate-delay-2">
+            <input type="date" name="appointment_date" placeholder="Preferred Date*" required>
           </div>
-          <div class="form-group">
-            <input type="time" name="appointment_time" placeholder="Preferred Time" required>
+          <div class="form-group animate__animated animate__fadeIn animate-delay-2">
+            <input type="time" name="appointment_time" placeholder="Preferred Time*" required>
           </div>
         </div>
-        <div class="form-group">
-          <textarea name="message" rows="5" placeholder="Tell us about your needs..."></textarea>
+        <div class="form-group animate__animated animate__fadeIn animate-delay-2">
+          <textarea name="message" rows="5" placeholder="Tell us about your specific needs..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Request Appointment</button>
+        <button type="submit" class="btn btn-primary animate__animated animate__fadeIn animate-delay-2" style="width: 100%; padding: 16px;">
+          Request Appointment
+        </button>
       </form>
       
-      <div class="appointment-info">
+      <div class="appointment-info animate__animated animate__fadeIn animate-delay-1">
         <h3>Need immediate assistance?</h3>
-        <p>Call us directly at <a href="tel:+919876543210">+91 98765 43210</a></p>
-        <p>Or email us at <a href="mailto:appointments@compusindia.com">appointments@compusindia.com</a></p>
+        <p>Our dedicated team is ready to help you with your business needs. Call us directly at:</p>
+        <p style="margin: 15px 0;"><a href="tel:+919876543210"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 98765 43210</a></p>
+        <p>Or email us at:</p>
+        <p style="margin: 15px 0 25px;"><a href="mailto:appointments@compusindia.com"><i class="fas fa-envelope" style="margin-right: 10px;"></i> appointments@compusindia.com</a></p>
         
         <div class="working-hours">
-          <h4>Working Hours</h4>
-          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-          <p>Saturday: 10:00 AM - 3:00 PM</p>
+          <h4><i class="far fa-clock" style="margin-right: 10px;"></i> Working Hours</h4>
+          <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+          <p><strong>Saturday:</strong> 10:00 AM - 3:00 PM</p>
+          <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">*Appointments outside working hours available upon request</p>
         </div>
       </div>
     </div>
+    
+    <div id="success-message" class="success-message" style="display: none;">
+      <i class="fas fa-check-circle"></i>
+      <h2>Appointment Request Received</h2>
+      <p>Thank you for scheduling with Compus India. We have received your request and will contact you shortly to confirm your appointment details.</p>
+      <p>For immediate assistance, please call our support team.</p>
+      <a href="index.html" class="btn btn-primary">Return to Home</a>
+    </div>
   </main>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize EmailJS
+    (function(){
+      emailjs.init("6CPHqFDm-JiJAv4DJ");
+    })();
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        document.querySelector('.logo img').style.height = '40px';
+      } else {
+        header.classList.remove('scrolled');
+        document.querySelector('.logo img').style.height = '50px';
+      }
+    });
+    
+    // Form submission
+    document.getElementById('appointment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Send form data via EmailJS
+      emailjs.sendForm('service_yourServiceID', 'template_yourTemplateID', this)
+        .then(function() {
+          // Show success message
+          document.getElementById('appointment-section').style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+          
+          // Add animation class after a slight delay to allow display change
+          setTimeout(function() {
+            document.getElementById('success-message').classList.add('animate__animated', 'animate__fadeIn');
+          }, 50);
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert('There was an error submitting your request. Please try again or contact us directly.');
+        });
+    });
+    
+    // Animate form elements on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate__animated');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          const animationClass = element.className.match(/animate__\w+/)[0];
+          element.classList.add(animationClass);
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
 </body>
 </html>
