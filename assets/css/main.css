@@ -235,3 +235,106 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Add these to your existing CSS */
+
+/* Form Messages */
+.form-success, 
+.form-error {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-success i, 
+.form-error i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Loading state */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.is-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease infinite;
+}
+
+/* Appointment Form Enhancements */
+#appointment-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fafafa;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+}
+
+#appointment-form input[type="date"],
+#appointment-form input[type="time"] {
+    position: relative;
+}
+
+#appointment-form input[type="date"]::-webkit-calendar-picker-indicator,
+#appointment-form input[type="time"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+#appointment-form input[type="date"]::before,
+#appointment-form input[type="time"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    color: #999;
+    background: #fafafa;
+}
+
+#appointment-form input[type="date"]:focus::before,
+#appointment-form input[type="time"]:focus::before,
+#appointment-form input[type="date"]:valid::before,
+#appointment-form input[type="time"]:valid::before {
+    display: none;
+}
