@@ -3,577 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compus India - Coming Soon</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #3a86ff;
-            --primary-dark: #2667cc;
-            --secondary: #8338ec;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f8f9fa;
-            --gray: #2d2d2d;
-            --light-gray: #3d3d3d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        
-        /* Background Animation */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-        }
-        
-        /* Container */
-        .container {
-            max-width: 900px;
-            width: 100%;
-            background: rgba(18, 18, 18, 0.8);
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 1s ease;
-        }
-        
-        .container.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        /* Glow Effect */
-        .glow {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary), transparent 70%);
-            filter: blur(60px);
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
-        .glow-1 {
-            top: -100px;
-            left: -100px;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .glow-2 {
-            bottom: -100px;
-            right: -100px;
-            background: radial-gradient(circle, var(--secondary), transparent 70%);
-            animation: float 10s ease-in-out infinite reverse;
-        }
-        
-        /* Header */
-        .logo {
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .logo h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .tagline {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Construction Content */
-        .construction-icon {
-            font-size: 6rem;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--light), rgba(255, 255, 255, 0.8));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Countdown Timer */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 15px;
-        }
-        
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px 20px;
-            border-radius: 10px;
-            min-width: 100px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .countdown-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 5px;
-        }
-        
-        /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            max-width: 500px;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-            margin: 30px auto;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-        
-        /* Contact Info */
-        .contact-info {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-info p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-        }
-        
-        .contact-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .contact-button i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .email-btn {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        }
-        
-        .phone-btn {
-            background: linear-gradient(135deg, var(--secondary), #6a27c2);
-        }
-        
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.9rem;
-        }
-        
-        /* Animations */
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(-10px, -10px); }
-            100% { transform: translate(0, 0); }
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
-            .logo h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .countdown {
-                flex-wrap: wrap;
-            }
-            
-            .countdown-item {
-                min-width: 80px;
-                padding: 15px 10px;
-            }
-            
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-            
-            .contact-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .contact-button {
-                justify-content: center;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Compus India | Premium Business Consulting Services</title>
+    <meta name="description" content="Compus India provides expert business consulting, tax solutions, and financial advisory services to help your business thrive.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <canvas class="bg-animation" id="bg-animation"></canvas>
-    
-    <!-- Glow Effects -->
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    
-    <div class="container" id="main-container">
-        <div class="logo">
-            <h1>Compus India</h1>
-            <div class="tagline">Premium Business & Tax Consulting Solutions</div>
-        </div>
-        
-        <div class="construction-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        
-        <h2>We're Building Something Amazing</h2>
-        <p>Our new digital platform for business and tax consulting services is under development. We're crafting an exceptional experience to serve your financial needs better than ever before.</p>
-        
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar"></div>
-        </div>
-        
-        <div class="countdown">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Seconds</div>
-            </div>
-        </div>
-        
-        <div class="contact-info">
-            <p>For immediate assistance, please contact us:</p>
-            <div class="contact-buttons">
-                <a href="mailto:contact@compusindia.com" class="contact-button email-btn">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
-                <a href="tel:+911234567890" class="contact-button phone-btn">
-                    <i class="fas fa-phone-alt"></i> Call Us
-                </a>
-            </div>
-            
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
     </div>
-    
-    <footer>
-        &copy; <span id="year"></span> Compus India. All Rights Reserved.
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/compus-logo.png" alt="Compus India Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="services/business-consulting.html">Business Consulting</a>
+                            <a href="services/tax-solutions.html">Tax Solutions</a>
+                            <a href="services/compliance-services.html">Compliance Services</a>
+                            <a href="services/financial-advisory.html">Financial Advisory</a>
+                            <a href="services/startup-services.html">Startup Services</a>
+                        </div>
+                    </li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-cta"><a href="appointment.html" class="btn btn-primary">Book Appointment</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Expert Business Solutions for Growth & Success</h1>
+                <p class="lead">Premium consulting services tailored to help your business navigate challenges and maximize opportunities.</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">Our Services</a>
+                    <a href="appointment.html" class="btn btn-secondary">Get Consultation</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted By Leading Businesses</h2>
+            </div>
+            <div class="badges-container">
+                <div class="badge-item">
+                    <img src="assets/images/badges/iso-certified.png" alt="ISO Certified">
+                </div>
+                <div class="badge-item">
+                    <img src="assets/images/badges/icai-member.png" alt="ICAI Member">
+                </div>
+                <div class="badge-item">
+                    <img src="assets/images/badges/startup-india.png" alt="Startup India Recognized">
+                </div>
+                <div class="badge-item">
+                    <img src="assets/images/badges/top-consulting-firm.png" alt="Top Consulting Firm 2023">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Compus India</h2>
+                    <p class="lead">Compus Business Consulting Services Private Limited is a premier consulting firm dedicated to helping businesses achieve their full potential.</p>
+                    <p>With over 15 years of combined experience, our team of certified professionals provides comprehensive solutions tailored to your unique business needs. We combine deep industry knowledge with innovative approaches to deliver measurable results.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Satisfied Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Industry Awards</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about-team.jpg" alt="Compus India Team" class="img-fluid">
+                    <div class="experience-badge">
+                        <span>15+ Years</span>
+                        <p>Of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Services</h2>
+                <p class="subheading">Comprehensive solutions designed for business success</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Consulting</h3>
+                    <p>Strategic planning, process optimization, and growth strategies tailored to your business objectives.</p>
+                    <a href="services/business-consulting.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Tax Solutions</h3>
+                    <p>Comprehensive tax planning, compliance, and optimization services to minimize liabilities.</p>
+                    <a href="services/tax-solutions.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Compliance Services</h3>
+                    <p>Ensure your business meets all regulatory requirements with our expert compliance services.</p>
+                    <a href="services/compliance-services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Financial Advisory</h3>
+                    <p>Expert financial guidance to help you make informed decisions and maximize returns.</p>
+                    <a href="services/financial-advisory.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Startup Services</h3>
+                    <p>Specialized services for startups including incorporation, funding strategy, and growth planning.</p>
+                    <a href="services/startup-services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored services designed specifically for your unique business requirements.</p>
+                    <a href="services/custom-solutions.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Compus India</h2>
+                <p class="subheading">The competitive advantages that set us apart</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our consultants bring decades of combined experience across industries.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Demonstrated track record of delivering measurable business improvements.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Client-Centric</h3>
+                    <p>We prioritize your business goals and tailor solutions accordingly.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Confidentiality</h3>
+                    <p>Strict confidentiality protocols to protect your business information.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Approach</h3>
+                    <p>We combine traditional expertise with innovative strategies.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dedicated Support</h3>
+                    <p>Ongoing support and guidance beyond initial engagements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Success Stories</h2>
+                <p class="subheading">What our valued clients say about us</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Compus India transformed our financial operations. Their tax optimization strategies saved us 28% in liabilities last year alone."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="assets/images/clients/client1.jpg" alt="Rajiv Sharma">
+                        <div>
+                            <h4>Rajiv Sharma</h4>
+                            <p>CEO, Sharma Textiles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The business restructuring plan from Compus helped us streamline operations and increase profitability by 35% in just 6 months."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="assets/images/clients/client2.jpg" alt="Priya Patel">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <p>Founder, GreenTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"As a startup, their guidance was invaluable. From incorporation to funding strategy, they were with us every step of the way."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="assets/images/clients/client3.jpg" alt="Amit Desai">
+                        <div>
+                            <h4>Amit Desai</h4>
+                            <p>Co-Founder, TechNova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="testimonials.html" class="btn btn-outline">Read More Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p class="lead">Schedule a consultation with our experts today and take the first step toward achieving your business goals.</p>
+                <div class="cta-buttons">
+                    <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-overlay"></div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Insights</h2>
+                <p class="subheading">Stay informed with our expert analysis</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/tax-changes-2023.jpg" alt="Tax Changes 2023">
+                        <div class="blog-date">
+                            <span>15</span>
+                            <span>Jun 2023</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="blog/tax-changes-2023.html">Key Tax Changes for Businesses in 2023</a></h3>
+                        <p>An overview of the most important tax updates that will affect your business this year.</p>
+                        <a href="blog/tax-changes-2023.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/digital-transformation.jpg" alt="Digital Transformation">
+                        <div class="blog-date">
+                            <span>02</span>
+                            <span>Jun 2023</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="blog/digital-transformation.html">The Essential Guide to Business Digital Transformation</a></h3>
+                        <p>How to successfully navigate the digital transformation journey for your business.</p>
+                        <a href="blog/digital-transformation.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/startup-funding.jpg" alt="Startup Funding">
+                        <div class="blog-date">
+                            <span>18</span>
+                            <span>May 2023</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="blog/startup-funding.html">Startup Funding Options in India: 2023 Landscape</a></h3>
+                        <p>Explore the current funding ecosystem for startups and how to position your business.</p>
+                        <a href="blog/startup-funding.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="blog.html" class="btn btn-outline">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest business insights, tax updates, and exclusive offers.</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <p>Compus Business Consulting Services Private Limited is a premier consulting firm providing expert business solutions since 2008.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services/business-consulting.html">Business Consulting</a></li>
+                        <li><a href="services/tax-solutions.html">Tax Solutions</a></li>
+                        <li><a href="services/compliance-services.html">Compliance Services</a></li>
+                        <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
+                        <li><a href="services/startup-services.html">Startup Services</a></li>
+                        <li><a href="services/custom-solutions.html">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Business Tower, MG Road, Bangalore, Karnataka 560001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@compusindia.com">info@compusindia.com</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Compus Business Consulting Services Private Limited. All Rights Reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
     
+    <!-- Appointment Form Handling -->
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Animated background
-        const canvas = document.getElementById('bg-animation');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const particles = [];
-        const particleCount = window.innerWidth < 768 ? 30 : 60;
-        
-        // Particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.color = `rgba(58, 134, 255, ${Math.random() * 0.5 + 0.1})`;
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.x > canvas.width || this.x < 0) {
-                    this.speedX = -this.speedX;
-                }
-                
-                if (this.y > canvas.height || this.y < 0) {
-                    this.speedY = -this.speedY;
-                }
-            }
-            
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        // Create particles
-        function init() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            
-            // Connect particles
-            connect();
-            
-            requestAnimationFrame(animate);
-        }
-        
-        // Connect nearby particles
-        function connect() {
-            let opacity = 1;
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    const distance = Math.sqrt(
-                        Math.pow(particles[a].x - particles[b].x, 2) + 
-                        Math.pow(particles[a].y - particles[b].y, 2)
-                    );
-                    
-                    if (distance < 150) {
-                        opacity = 1 - (distance / 150);
-                        ctx.strokeStyle = `rgba(58, 134, 255, ${opacity * 0.2})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
-        // Handle resize
-        window.addEventListener('resize', function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-        
-        // Initialize and animate
-        init();
-        animate();
-        
-        // Show container with fade-in effect
-        window.addEventListener('load', function() {
-            document.getElementById('main-container').classList.add('visible');
-        });
-        
-        // Countdown Timer - Set your launch date here (YYYY, MM-1, DD)
-        const launchDate = new Date(2023, 11, 31).getTime();
-        const totalDuration = launchDate - new Date().getTime();
-        
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-            
-            // Calculate time units
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Update display
-            document.getElementById("days").textContent = days.toString().padStart(2, "0");
-            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-            
-            // Update progress bar
-            const progress = ((totalDuration - distance) / totalDuration) * 100;
-            document.getElementById("progress-bar").style.width = `${Math.min(progress, 100)}%`;
-            
-            // Launch complete
-            if (distance < 0) {
-                clearInterval(timer);
-                document.querySelector("h2").textContent = "We're Live Now!";
-                document.querySelector("p").textContent = "Our premium business and tax consulting platform is now available. Explore our services!";
-                document.getElementById("progress-bar").style.width = "100%";
-                
-                // Update countdown to zeros
-                document.getElementById("days").textContent = "00";
-                document.getElementById("hours").textContent = "00";
-                document.getElementById("minutes").textContent = "00";
-                document.getElementById("seconds").textContent = "00";
-            }
-        }, 1000);
-        
-        // Add hover effects to countdown items
-        const countdownItems = document.querySelectorAll('.countdown-item');
-        countdownItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = '';
-                this.style.boxShadow = '';
-            });
+        // This would be replaced with actual form handling code
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form submission logic would go here
+            alert('Thank you for your appointment request. We will contact you shortly to confirm.');
         });
     </script>
 </body>
