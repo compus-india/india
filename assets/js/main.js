@@ -28,7 +28,7 @@ window.addEventListener('scroll', () => {
 function sendEmail(event) {
   event.preventDefault();
 
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target, 'YOUR_PUBLIC_KEY')
+  emailjs.sendForm('service_rrhyyif', 'template_mhm8y7f', event.target, '6CPHqFDm-JiJAv4DJ')
     .then(() => {
       alert('Appointment request sent successfully! ✅');
       document.getElementById('appointment-form').reset();
