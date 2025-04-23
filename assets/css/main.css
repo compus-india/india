@@ -1,38 +1,84 @@
-/* Premium Color Scheme - Elegant & Modern */
+/* ============================================= */
+/* Premium Business Consulting CSS Framework */
+/* ============================================= */
+
+/**
+* COLOR SYSTEM (Professional & Trustworthy)
+* Primary: Deep Navy (#1A3A5F) - Authority, trust
+* Secondary: Steel Blue (#4A6B8A) - Stability, intelligence
+* Accent: Warm Gold (#D4A259) - Prestige, success
+* Neutral: Cool Grays - Professionalism
+* Highlight: Brighter Gold (#E6B85C) - Calls to action
+*/
+
 :root {
-  --primary-color: #1A3A5F;      /* Deep Navy Blue */
-  --secondary-color: #4A6B8A;    /* Muted Steel Blue */
-  --accent-color: #D4A259;       /* Warm Gold */
-  --accent-dark: #B88A4B;        /* Darker Gold */
-  --text-dark: #2D3748;         /* Dark Gray */
-  --text-light: #F8FAFC;        /* Soft White */
-  --gray-bg: #F5F7FA;           /* Light Gray */
-  --light-bg: #EDF2F7;          /* Very Light Blue */
-  --dark-bg: #0F172A;           /* Dark Navy */
-  --highlight: #E6B85C;         /* Brighter Gold */
-  --platinum: #E2E8F0;          /* Platinum */
+  /* CORE COLORS */
+  --primary-color: #1A3A5F;
+  --primary-light: #2E4A6F;
+  --primary-dark: #0F2A4F;
+  
+  --secondary-color: #4A6B8A;
+  --secondary-light: #5E7F9E;
+  --secondary-dark: #36577A;
+  
+  --accent-color: #D4A259;
+  --accent-light: #E6B85C;
+  --accent-dark: #B88A4B;
+  
+  /* NEUTRAL PALETTE */
+  --text-dark: #2D3748;
+  --text-medium: #4A5568;
+  --text-light: #F8FAFC;
+  
+  --gray-100: #F5F7FA;
+  --gray-200: #EDF2F7;
+  --gray-300: #E2E8F0;
+  --gray-400: #CBD5E0;
+  
+  /* BACKGROUNDS */
+  --light-bg: var(--gray-100);
+  --dark-bg: #0F172A;
+  --dark-bg-light: #1E293B;
+  
+  /* SPECIAL COLORS */
+  --highlight: var(--accent-light);
+  --platinum: var(--gray-300);
+  --success: #38A169;
+  --warning: #DD6B20;
+  --error: #E53E3E;
+  
+  /* EFFECTS */
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --box-shadow: 0 10px 30px rgba(26, 58, 95, 0.1);
-  --box-shadow-hover: 0 15px 40px rgba(26, 58, 95, 0.2);
+  --box-shadow: 0 4px 20px rgba(26, 58, 95, 0.12);
+  --box-shadow-hover: 0 8px 30px rgba(26, 58, 95, 0.16);
   --border-radius: 12px;
+  --border-radius-sm: 8px;
 }
 
-/* Premium Typography */
+/* ============================================= */
+/* BASE STYLES */
+/* ============================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.8;
   color: var(--text-dark);
-  background-color: var(--gray-bg);
+  background-color: var(--light-bg);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
+/* TYPOGRAPHY SYSTEM */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -41,7 +87,26 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color);
 }
 
-/* Enhanced Preloader */
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.75rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-medium);
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* ============================================= */
+/* COMPONENT STYLES */
+/* ============================================= */
+
+/* PRELOADER */
 .preloader {
   position: fixed;
   top: 0;
@@ -59,29 +124,28 @@ h1, h2, h3, h4, h5, h6 {
 .loader {
   width: 60px;
   height: 60px;
-  border: 4px solid rgba(212, 175, 55, 0.2);
+  border: 4px solid rgba(212, 162, 89, 0.2);
   border-radius: 50%;
-  border-top-color: var(--gold-accent);
+  border-top-color: var(--accent-color);
   animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
 }
 
-/* Premium Buttons */
+/* BUTTON SYSTEM */
 .btn {
   display: inline-block;
   padding: 16px 36px;
   border-radius: 50px;
-  text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.2px;
   transition: var(--transition);
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
-  text-decoration: none;
   text-align: center;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-transform: uppercase;
 }
 
 .btn::before {
@@ -91,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   transition: var(--transition);
   z-index: -1;
 }
@@ -100,53 +164,58 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+/* PRIMARY BUTTON (Gold Gradient) */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+  color: var(--text-light);
   box-shadow: 0 5px 20px rgba(212, 162, 89, 0.3);
 }
 
 .btn-primary:hover {
+  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(212, 162, 89, 0.4);
 }
 
+/* SECONDARY BUTTON (Navy Gradient) */
 .btn-secondary {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: var(--text-light);
-  box-shadow: 0 5px 20px rgba(10, 36, 99, 0.2);
+  box-shadow: 0 5px 20px rgba(26, 58, 95, 0.2);
 }
 
 .btn-secondary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(10, 36, 99, 0.3);
+  box-shadow: 0 8px 25px rgba(26, 58, 95, 0.3);
 }
 
+/* OUTLINE BUTTON (Gold Accent) */
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--gold-accent);
-  color: var(--gold-accent);
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .btn-outline:hover {
-  background: var(--gold-accent);
+  background: var(--accent-color);
   color: var(--text-dark);
   transform: translateY(-3px);
 }
 
-/* Premium Header */
+/* HEADER SYSTEM */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(247, 247, 247, 0.98);
+  background: rgba(248, 250, 252, 0.98);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 5px 30px rgba(10, 36, 99, 0.1);
+  box-shadow: var(--box-shadow);
   transition: all 0.4s ease;
 }
 
 .header.scrolled {
   padding: 10px 0;
-  background: rgba(247, 247, 247, 0.98);
+  background: rgba(248, 250, 252, 0.98);
 }
 
 .main-nav a {
@@ -167,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold-accent);
+  background: var(--accent-color);
   transition: var(--transition);
 }
 
@@ -175,10 +244,17 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Premium Hero Section */
+/* HERO SECTION */
 .hero {
+  height: 100vh;
+  min-height: 800px;
   background: linear-gradient(135deg, rgba(26, 58, 95, 0.9) 0%, rgba(74, 107, 138, 0.9) 100%),
               url('assets/images/hero-bg-premium.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -194,36 +270,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: 25px;
-  line-height: 1.2;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   color: var(--text-light);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.hero .lead {
-  font-size: 1.3rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  font-weight: 300;
-  max-width: 700px;
-}
-
-/* Premium Cards */
-.service-card, .advantage-card, .testimonial-card {
+/* CARD SYSTEM */
+.card {
   background: #fff;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(10, 36, 99, 0.1);
+  border: 1px solid rgba(26, 58, 95, 0.1);
 }
 
-.service-card:hover, .advantage-card:hover, .testimonial-card:hover {
+.card:hover {
   transform: translateY(-10px);
   box-shadow: var(--box-shadow-hover);
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 162, 89, 0.3);
 }
 
 .service-card::before {
@@ -233,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), var(--gold-accent));
+  background: linear-gradient(90deg, var(--accent-color), var(--highlight));
   transition: var(--transition);
 }
 
@@ -241,28 +306,30 @@ h1, h2, h3, h4, h5, h6 {
   height: 6px;
 }
 
-/* Premium Testimonials */
+/* TESTIMONIALS */
 .testimonial-content::before {
   content: '\201C';
   position: absolute;
   top: -30px;
   left: -15px;
   font-size: 6rem;
-  color: rgba(10, 36, 99, 0.05);
+  color: rgba(26, 58, 95, 0.05);
   font-family: serif;
   line-height: 1;
   z-index: 0;
 }
 
 .client-info img {
-  border: 3px solid var(--gold-accent);
+  border: 3px solid var(--accent-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Premium CTA Section */
+/* CTA SECTION */
 .cta-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%),
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%),
               url('assets/images/cta-pattern.png') center/cover;
+  position: relative;
+  overflow: hidden;
 }
 
 .cta-section::before {
@@ -276,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.1;
 }
 
-/* Premium Footer */
+/* FOOTER */
 .footer {
   background: var(--dark-bg);
   color: var(--text-light);
@@ -290,70 +357,114 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 10px;
-  background: linear-gradient(90deg, var(--accent-color), var(--gold-accent));
+  background: linear-gradient(90deg, var(--accent-color), var(--highlight));
 }
 
 .footer-col h4 {
   color: var(--platinum);
 }
 
-.footer-social a:hover {
-  background: linear-gradient(135deg, var(--accent-color), var(--gold-accent));
-  color: var(--text-dark);
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--dark-bg-light);
+  color: var(--accent-light);
+  transition: var(--transition);
 }
 
-/* Premium Animations */
+.footer-social a:hover {
+  background: linear-gradient(135deg, var(--accent-color), var(--highlight));
+  color: var(--text-dark);
+  transform: translateY(-3px);
+}
+
+/* ============================================= */
+/* UTILITY CLASSES */
+/* ============================================= */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-light {
+  background: var(--light-bg);
+}
+
+.bg-dark {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+/* ============================================= */
+/* ANIMATIONS */
+/* ============================================= */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 0 0 rgba(212, 162, 89, 0.4);
   }
   70% {
     transform: scale(1.03);
-    box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    box-shadow: 0 0 0 15px rgba(212, 162, 89, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    box-shadow: 0 0 0 0 rgba(212, 162, 89, 0);
   }
 }
 
-/* Responsive Adjustments */
+/* ============================================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================================= */
+
 @media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 3.2rem;
-  }
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
   
-  .hero .lead {
-    font-size: 1.1rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero h1 {
-    font-size: 2rem;
+  .hero {
+    min-height: 700px;
   }
   
   .btn {
     padding: 12px 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  
+  .hero {
+    min-height: 600px;
   }
 }
