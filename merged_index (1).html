@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUS INDIA | Business & Tax Consulting Services</title>
+    <meta name="description" content="Professional business consulting and tax optimization services for growing enterprises">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #2a5bd7;
+            --primary-hover: #1e4ac4;
+            --text-color: #333;
+            --text-light: #555;
+            --bg-color: #fff;
+            --border-color: #eee;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            padding-top: 80px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background-color: var(--bg-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            height: 80px;
+        }
+        
+        .logo img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Desktop Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links > li {
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .nav-links > li > a {
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 15px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links > li > a:hover,
+        .nav-links > li > a.active {
+            color: var(--primary-color);
+            background-color: rgba(42, 91, 215, 0.05);
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--bg-color);
+            width: 220px;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            list-style: none;
+            padding: 10px 0;
+            margin-top: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-light);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary-color);
+            background-color: rgba(42, 91, 215, 0.05);
+            padding-left: 25px;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--text-color);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .mobile-menu-btn span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .mobile-menu-btn span:nth-child(2),
+        .mobile-menu-btn span:nth-child(3) {
+            top: 10px;
+        }
+        
+        .mobile-menu-btn span:nth-child(4) {
+            top: 20px;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            top: 10px;
+            width: 0%;
+            left: 50%;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(4) {
+            top: 10px;
+            width: 0%;
+            left: 50%;
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 992px) {
+            .main-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                box-shadow: var(--shadow);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .main-nav.active {
+                max-height: 100vh;
+                overflow-y: auto;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-links > li {
+                margin: 5px 0;
+                width: 100%;
+            }
+            
+            .nav-links > li > a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0;
+                margin: 10px 0 0 0;
+                background-color: #f9f9f9;
+                border-radius: 0;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                max-height: 500px;
+                padding: 10px 0;
+                margin-top: 5px;
+            }
+            
+            .dropdown-menu li a {
+                padding-left: 30px;
+                font-size: 13px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .mobile-cta {
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .dropdown > a::after {
+                content: '+';
+                margin-left: auto;
+                transition: transform 0.3s ease;
+            }
+        
+            .dropdown.active > a::after {
+                content: '-';
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/compus-logo.png" alt="Compus India Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">SERVICES <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/business-consulting.html">Business Consulting</a></li>
+                            <li><a href="services/tax-solutions.html">Tax Solutions</a></li>
+                            <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                
+                <div class="mobile-cta">
+                    <a href="contact.html" class="btn btn-primary">GET CONSULTATION</a>
+                </div>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">GET CONSULTATION</a>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rest of your content remains exactly the same -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h6 class="hero-subtitle">Professional Business Solutions</h6>
+                <h1>Strategic <span>Consulting</span> Services</h1>
+                <p class="lead">Expert guidance to optimize your business operations and tax strategies for sustainable growth.</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">OUR SERVICES</a>
+                    <a href="contact.html" class="btn btn-outline">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-down">
+            <a href="#services-section"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p class="subheading">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Consulting</h3>
+                    <p>Strategic planning and operational improvements to drive business growth and efficiency.</p>
+                    <a href="services/business-consulting.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Tax Solutions</h3>
+                    <p>Comprehensive tax planning and compliance services to optimize your financial position.</p>
+                    <a href="services/tax-solutions.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Financial Advisory</h3>
+                    <p>Expert financial guidance to help you make informed business decisions.</p>
+                    <a href="services/financial-advisory.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Approach</span></h2>
+                <p class="subheading">A structured methodology for delivering results</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card" data-aos="fade-up">
+                    <div class="advantage-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Needs Assessment</h3>
+                    <p>Thorough analysis of your business requirements and challenges.</p>
+                </div>
+                
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Strategy Development</h3>
+                    <p>Customized solutions designed to address your specific needs.</p>
+                </div>
+                
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Implementation</h3>
+                    <p>Practical execution with measurable results and ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Transform Your Business?</h2>
+                <p class="lead">Get in touch with our experts to discuss how we can help your business grow.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Compus</h4>
+                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <p>Professional business consulting and tax advisory services to help your business thrive.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Compus Business Consulting Services Private Limited, Mukkam Road,Kunnamangalam -673571,Kozhikode,Kerala,India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+912234567890">+91 9546900755</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@compusindia.com">infocompus2@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2017 COMPUS INDIA. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').addClass('fade-out');
+            setTimeout(function() {
+                $('.preloader').remove();
+            }, 500);
+        });
+        
+        // Enhanced Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+            
+            // Dropdown functionality for mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other open dropdowns
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992 && 
+                    !e.target.closest('.main-nav') && 
+                    !e.target.closest('#mobile-menu-btn') &&
+                    mainNav.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    
+                    // Close all dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (window.innerWidth <= 992 && mainNav.classList.contains('active')) {
+                            mobileMenuBtn.classList.remove('active');
+                            mainNav.classList.remove('active');
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to Top Button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#backToTop').addClass('active');
+                } else {
+                    $('#backToTop').removeClass('active');
+                }
+            });
+            
+            $('#backToTop').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop: 0}, '300');
+            });
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>
