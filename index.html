@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compus India | Business & Tax Consulting Services</title>
+    <title>COMPUS INDIA | Business & Tax Consulting Services</title>
     <meta name="description" content="Professional business consulting and tax optimization services for growing enterprises">
     
     <!-- Favicon -->
@@ -12,9 +12,6 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -22,7 +19,61 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* Navigation Styles */
+        /* Base Styles */
+        :root {
+            --primary-color: #2a5bd7;
+            --primary-hover: #1e4ac4;
+            --text-color: #333;
+            --text-light: #555;
+            --bg-color: #fff;
+            --border-color: #eee;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            padding-top: 80px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Header Styles */
         .header {
             position: fixed;
             top: 0;
@@ -35,7 +86,7 @@
         }
         
         .header.scrolled {
-            background-color: #fff;
+            background-color: var(--bg-color);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         
@@ -44,8 +95,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            height: 80px;
         }
         
         .logo img {
@@ -53,6 +103,7 @@
             transition: all 0.3s ease;
         }
         
+        /* Desktop Navigation */
         .main-nav {
             display: flex;
             align-items: center;
@@ -71,8 +122,7 @@
         }
         
         .nav-links > li > a {
-            color: #333;
-            text-decoration: none;
+            color: var(--text-color);
             font-weight: 500;
             font-size: 15px;
             padding: 10px 15px;
@@ -84,21 +134,22 @@
         
         .nav-links > li > a:hover,
         .nav-links > li > a.active {
-            color: #2a5bd7;
+            color: var(--primary-color);
             background-color: rgba(42, 91, 215, 0.05);
         }
         
+        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #fff;
+            background-color: var(--bg-color);
             width: 220px;
             border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             list-style: none;
             padding: 10px 0;
-            margin-top: 10px;
+            margin-top: 15px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(10px);
@@ -113,34 +164,20 @@
         }
         
         .dropdown-menu li a {
-            padding: 8px 20px;
+            padding: 10px 20px;
             display: block;
-            color: #555;
+            color: var(--text-light);
             transition: all 0.2s ease;
             font-size: 14px;
         }
         
         .dropdown-menu li a:hover {
-            color: #2a5bd7;
+            color: var(--primary-color);
             background-color: rgba(42, 91, 215, 0.05);
             padding-left: 25px;
         }
         
-        .nav-cta .btn-primary {
-            background-color: #2a5bd7;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta .btn-primary:hover {
-            background-color: #1e4ac4;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(42, 91, 215, 0.3);
-        }
-        
+        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             width: 30px;
@@ -155,7 +192,7 @@
             position: absolute;
             height: 3px;
             width: 100%;
-            background: #333;
+            background: var(--text-color);
             border-radius: 3px;
             opacity: 1;
             left: 0;
@@ -200,11 +237,11 @@
         @media (max-width: 992px) {
             .main-nav {
                 position: fixed;
-                top: 70px;
+                top: 80px;
                 left: 0;
                 width: 100%;
-                background-color: #fff;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                background-color: var(--bg-color);
+                box-shadow: var(--shadow);
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 20px;
@@ -214,7 +251,8 @@
             }
             
             .main-nav.active {
-                max-height: 1000px;
+                max-height: 100vh;
+                overflow-y: auto;
             }
             
             .nav-links {
@@ -229,7 +267,7 @@
             
             .nav-links > li > a {
                 padding: 12px 0;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid var(--border-color);
             }
             
             .dropdown-menu {
@@ -243,7 +281,7 @@
                 overflow: hidden;
                 transition: max-height 0.3s ease;
                 padding: 0;
-                margin: 0;
+                margin: 10px 0 0 0;
                 background-color: #f9f9f9;
                 border-radius: 0;
             }
@@ -251,10 +289,12 @@
             .dropdown.active .dropdown-menu {
                 max-height: 500px;
                 padding: 10px 0;
+                margin-top: 5px;
             }
             
             .dropdown-menu li a {
                 padding-left: 30px;
+                font-size: 13px;
             }
             
             .mobile-menu-btn {
@@ -300,27 +340,26 @@
 
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
                     <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="services.html">SERVICES <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="services/business-consulting.html">Business Consulting</a></li>
                             <li><a href="services/tax-solutions.html">Tax Solutions</a></li>
                             <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
                         </ul>
                     </li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
                 </ul>
                 
                 <div class="mobile-cta">
-                    <a href="contact.html" class="btn btn-primary">Get Consultation</a>
+                    <a href="contact.html" class="btn btn-primary">GET CONSULTATION</a>
                 </div>
             </nav>
 
             <div class="nav-cta">
-                <a href="contact.html" class="btn btn-primary">Get Consultation</a>
+                <a href="contact.html" class="btn btn-primary">GET CONSULTATION</a>
             </div>
 
             <div class="mobile-menu-btn" id="mobile-menu-btn">
@@ -332,6 +371,7 @@
         </div>
     </header>
 
+    <!-- Rest of your content remains exactly the same -->
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -340,8 +380,8 @@
                 <h1>Strategic <span>Consulting</span> Services</h1>
                 <p class="lead">Expert guidance to optimize your business operations and tax strategies for sustainable growth.</p>
                 <div class="hero-btns">
-                    <a href="services.html" class="btn btn-primary">Our Services</a>
-                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    <a href="services.html" class="btn btn-primary">OUR SERVICES</a>
+                    <a href="contact.html" class="btn btn-outline">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -475,15 +515,15 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Business Center, Mumbai, India</span>
+                            <span>Compus Business Consulting Services Private Limited, Mukkam Road,Kunnamangalam -673571,Kozhikode,Kerala,India</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+912234567890">+91 22 3456 7890</a>
+                            <a href="tel:+912234567890">+91 9546900755</a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@compusindia.com">info@compusindia.com</a>
+                            <a href="mailto:info@compusindia.com">infocompus2@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -491,7 +531,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    <p>&copy; 2023 Compus Consulting. All Rights Reserved.</p>
+                    <p>&copy; 2017 COMPUS INDIA. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
