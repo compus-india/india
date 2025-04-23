@@ -3,48 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compus India | Premium Business Consulting Services</title>
     <meta name="description" content="Compus India provides expert business consulting, tax solutions, and financial advisory services to help your business thrive.">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" as="font" crossorigin>
+    <link rel="preload" href="assets/images/hero-bg.jpg" as="image">
     
-    <!-- Fonts -->
+    <!-- Title with brand focus -->
+    <title>Compus India | Premium Business Consulting & Financial Advisory Services</title>
+    
+    <!-- Favicon with modern approach -->
+    <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    
+    <!-- Fonts with fallback -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- CSS with media query for print -->
+    <link rel="stylesheet" href="assets/css/main.css" media="screen">
+    <link rel="stylesheet" href="assets/css/print.css" media="print">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome with integrity check -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://www.compusindia.com">
+    
+    <!-- Structured data for rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Compus India",
+      "image": "https://www.compusindia.com/assets/images/compus-logo.png",
+      "@id": "",
+      "url": "https://www.compusindia.com",
+      "telephone": "+919876543210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Business Tower, MG Road",
+        "addressLocality": "Bangalore",
+        "postalCode": "560001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
+    <!-- Preloader with aria attributes -->
+    <div class="preloader" aria-hidden="true">
+        <div class="loader" role="status"></div>
+        <span class="sr-only">Loading...</span>
     </div>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- Header with improved semantic structure -->
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <img src="images/compus-logo.png" alt="Compus India Logo">
+                <a href="index.html" aria-label="Compus India Home">
+                    <img src="assets/images/compus-logo.png" alt="Compus India Logo" width="180" height="60" loading="eager">
                 </a>
             </div>
             
-            <nav class="main-nav">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="services/business-consulting.html">Business Consulting</a>
-                            <a href="services/tax-solutions.html">Tax Solutions</a>
-                            <a href="services/compliance-services.html">Compliance Services</a>
-                            <a href="services/financial-advisory.html">Financial Advisory</a>
-                            <a href="services/startup-services.html">Startup Services</a>
+                        <a href="services.html" aria-haspopup="true" aria-expanded="false">Services <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="services/business-consulting.html" role="menuitem">Business Consulting</a>
+                            <a href="services/tax-solutions.html" role="menuitem">Tax Solutions</a>
+                            <a href="services/compliance-services.html" role="menuitem">Compliance Services</a>
+                            <a href="services/financial-advisory.html" role="menuitem">Financial Advisory</a>
+                            <a href="services/startup-services.html" role="menuitem">Startup Services</a>
                         </div>
                     </li>
                     <li><a href="testimonials.html">Testimonials</a></li>
@@ -54,19 +106,19 @@
                 </ul>
             </nav>
             
-            <div class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with better semantics -->
+    <section class="hero" role="region" aria-labelledby="hero-heading">
         <div class="container">
             <div class="hero-content">
-                <h1>Expert Business Solutions for Growth & Success</h1>
+                <h1 id="hero-heading">Expert Business Solutions for Growth & Success</h1>
                 <p class="lead">Premium consulting services tailored to help your business navigate challenges and maximize opportunities.</p>
                 <div class="hero-btns">
                     <a href="services.html" class="btn btn-primary">Our Services</a>
@@ -74,41 +126,41 @@
                 </div>
             </div>
         </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-scroll-down">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
-        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <a href="#about" class="hero-scroll-down" aria-label="Scroll down to learn more">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </a>
     </section>
 
-    <!-- Trust Badges Section -->
-    <section class="trust-badges">
+    <!-- Trust Badges Section with lazy loading -->
+    <section class="trust-badges" role="region" aria-labelledby="trust-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Trusted By Leading Businesses</h2>
+                <h2 id="trust-heading">Trusted By Leading Businesses</h2>
             </div>
             <div class="badges-container">
                 <div class="badge-item">
-                    <img src="assets/images/badges/iso-certified.png" alt="ISO Certified">
+                    <img src="assets/images/badges/iso-certified.png" alt="ISO Certified" loading="lazy" width="120" height="80">
                 </div>
                 <div class="badge-item">
-                    <img src="assets/images/badges/icai-member.png" alt="ICAI Member">
+                    <img src="assets/images/badges/icai-member.png" alt="ICAI Member" loading="lazy" width="120" height="80">
                 </div>
                 <div class="badge-item">
-                    <img src="assets/images/badges/startup-india.png" alt="Startup India Recognized">
+                    <img src="assets/images/badges/startup-india.png" alt="Startup India Recognized" loading="lazy" width="120" height="80">
                 </div>
                 <div class="badge-item">
-                    <img src="assets/images/badges/top-consulting-firm.png" alt="Top Consulting Firm 2023">
+                    <img src="assets/images/badges/top-consulting-firm.png" alt="Top Consulting Firm 2023" loading="lazy" width="120" height="80">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- About Section with better semantics -->
+    <section id="about" class="about-section" role="region" aria-labelledby="about-heading">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Compus India</h2>
+                    <h2 id="about-heading">About Compus India</h2>
                     <p class="lead">Compus Business Consulting Services Private Limited is a premier consulting firm dedicated to helping businesses achieve their full potential.</p>
                     <p>With over 15 years of combined experience, our team of certified professionals provides comprehensive solutions tailored to your unique business needs. We combine deep industry knowledge with innovative approaches to deliver measurable results.</p>
                     <div class="stats">
@@ -128,7 +180,7 @@
                     <a href="about.html" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="about-image">
-                    <img src="assets/images/about-team.jpg" alt="Compus India Team" class="img-fluid">
+                    <img src="assets/images/about-team.jpg" alt="Compus India Team Meeting" class="img-fluid" loading="lazy" width="600" height="400">
                     <div class="experience-badge">
                         <span>15+ Years</span>
                         <p>Of Excellence</p>
@@ -138,68 +190,68 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section">
+    <!-- Services Section with ARIA attributes -->
+    <section class="services-section" role="region" aria-labelledby="services-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Our Premium Services</h2>
+                <h2 id="services-heading">Our Premium Services</h2>
                 <p class="subheading">Comprehensive solutions designed for business success</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Business Consulting</h3>
                     <p>Strategic planning, process optimization, and growth strategies tailored to your business objectives.</p>
-                    <a href="services/business-consulting.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/business-consulting.html" class="read-more" aria-label="Learn more about Business Consulting">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <h3>Tax Solutions</h3>
                     <p>Comprehensive tax planning, compliance, and optimization services to minimize liabilities.</p>
-                    <a href="services/tax-solutions.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/tax-solutions.html" class="read-more" aria-label="Learn more about Tax Solutions">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-balance-scale"></i>
                     </div>
                     <h3>Compliance Services</h3>
                     <p>Ensure your business meets all regulatory requirements with our expert compliance services.</p>
-                    <a href="services/compliance-services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/compliance-services.html" class="read-more" aria-label="Learn more about Compliance Services">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Financial Advisory</h3>
                     <p>Expert financial guidance to help you make informed decisions and maximize returns.</p>
-                    <a href="services/financial-advisory.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/financial-advisory.html" class="read-more" aria-label="Learn more about Financial Advisory">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Startup Services</h3>
                     <p>Specialized services for startups including incorporation, funding strategy, and growth planning.</p>
-                    <a href="services/startup-services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/startup-services.html" class="read-more" aria-label="Learn more about Startup Services">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Custom Solutions</h3>
                     <p>Tailored services designed specifically for your unique business requirements.</p>
-                    <a href="services/custom-solutions.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <a href="services/custom-solutions.html" class="read-more" aria-label="Learn more about Custom Solutions">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
             </div>
             
             <div class="text-center mt-5">
@@ -209,133 +261,139 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
+    <section class="why-choose-us" role="region" aria-labelledby="advantages-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose Compus India</h2>
+                <h2 id="advantages-heading">Why Choose Compus India</h2>
                 <p class="subheading">The competitive advantages that set us apart</p>
             </div>
             
             <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h3>Expert Team</h3>
                     <p>Our consultants bring decades of combined experience across industries.</p>
-                </div>
+                </article>
                 
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-medal"></i>
                     </div>
                     <h3>Proven Results</h3>
                     <p>Demonstrated track record of delivering measurable business improvements.</p>
-                </div>
+                </article>
                 
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3>Client-Centric</h3>
                     <p>We prioritize your business goals and tailor solutions accordingly.</p>
-                </div>
+                </article>
                 
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-lock"></i>
                     </div>
                     <h3>Confidentiality</h3>
                     <p>Strict confidentiality protocols to protect your business information.</p>
-                </div>
+                </article>
                 
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Innovative Approach</h3>
                     <p>We combine traditional expertise with innovative strategies.</p>
-                </div>
+                </article>
                 
-                <div class="advantage-card">
-                    <div class="advantage-icon">
+                <article class="advantage-card" role="article">
+                    <div class="advantage-icon" aria-hidden="true">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>Dedicated Support</h3>
                     <p>Ongoing support and guidance beyond initial engagements.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <!-- Testimonials Section with better semantics -->
+    <section class="testimonials-section" role="region" aria-labelledby="testimonials-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Client Success Stories</h2>
+                <h2 id="testimonials-heading">Client Success Stories</h2>
                 <p class="subheading">What our valued clients say about us</p>
             </div>
             
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
+            <div class="testimonials-slider" role="group" aria-roledescription="carousel">
+                <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial from Rajiv Sharma">
                     <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <div class="rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
-                        <p>"Compus India transformed our financial operations. Their tax optimization strategies saved us 28% in liabilities last year alone."</p>
+                        <blockquote>
+                            <p>"Compus India transformed our financial operations. Their tax optimization strategies saved us 28% in liabilities last year alone."</p>
+                        </blockquote>
                     </div>
                     <div class="client-info">
-                        <img src="assets/images/clients/client1.jpg" alt="Rajiv Sharma">
+                        <img src="assets/images/clients/client1.jpg" alt="Rajiv Sharma" loading="lazy" width="80" height="80">
                         <div>
                             <h4>Rajiv Sharma</h4>
                             <p>CEO, Sharma Textiles</p>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="testimonial-card">
+                <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial from Priya Patel">
                     <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <div class="rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
-                        <p>"The business restructuring plan from Compus helped us streamline operations and increase profitability by 35% in just 6 months."</p>
+                        <blockquote>
+                            <p>"The business restructuring plan from Compus helped us streamline operations and increase profitability by 35% in just 6 months."</p>
+                        </blockquote>
                     </div>
                     <div class="client-info">
-                        <img src="assets/images/clients/client2.jpg" alt="Priya Patel">
+                        <img src="assets/images/clients/client2.jpg" alt="Priya Patel" loading="lazy" width="80" height="80">
                         <div>
                             <h4>Priya Patel</h4>
                             <p>Founder, GreenTech Solutions</p>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="testimonial-card">
+                <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial from Amit Desai">
                     <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                        <div class="rating" aria-label="4.5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                         </div>
-                        <p>"As a startup, their guidance was invaluable. From incorporation to funding strategy, they were with us every step of the way."</p>
+                        <blockquote>
+                            <p>"As a startup, their guidance was invaluable. From incorporation to funding strategy, they were with us every step of the way."</p>
+                        </blockquote>
                     </div>
                     <div class="client-info">
-                        <img src="assets/images/clients/client3.jpg" alt="Amit Desai">
+                        <img src="assets/images/clients/client3.jpg" alt="Amit Desai" loading="lazy" width="80" height="80">
                         <div>
                             <h4>Amit Desai</h4>
                             <p>Co-Founder, TechNova</p>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             
             <div class="text-center mt-4">
@@ -344,11 +402,11 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- CTA Section with better semantics -->
+    <section class="cta-section" role="region" aria-labelledby="cta-heading">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Business?</h2>
+                <h2 id="cta-heading">Ready to Transform Your Business?</h2>
                 <p class="lead">Schedule a consultation with our experts today and take the first step toward achieving your business goals.</p>
                 <div class="cta-buttons">
                     <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
@@ -356,21 +414,21 @@
                 </div>
             </div>
         </div>
-        <div class="cta-overlay"></div>
+        <div class="cta-overlay" aria-hidden="true"></div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blog-section">
+    <!-- Blog Section with semantic markup -->
+    <section class="blog-section" role="region" aria-labelledby="blog-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Latest Insights</h2>
+                <h2 id="blog-heading">Latest Insights</h2>
                 <p class="subheading">Stay informed with our expert analysis</p>
             </div>
             
             <div class="blog-grid">
-                <article class="blog-card">
+                <article class="blog-card" role="article">
                     <div class="blog-image">
-                        <img src="assets/images/blog/tax-changes-2023.jpg" alt="Tax Changes 2023">
+                        <img src="assets/images/blog/tax-changes-2023.jpg" alt="Illustration showing tax documents and calendar" loading="lazy" width="400" height="220">
                         <div class="blog-date">
                             <span>15</span>
                             <span>Jun 2023</span>
@@ -379,13 +437,13 @@
                     <div class="blog-content">
                         <h3><a href="blog/tax-changes-2023.html">Key Tax Changes for Businesses in 2023</a></h3>
                         <p>An overview of the most important tax updates that will affect your business this year.</p>
-                        <a href="blog/tax-changes-2023.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog/tax-changes-2023.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" role="article">
                     <div class="blog-image">
-                        <img src="assets/images/blog/digital-transformation.jpg" alt="Digital Transformation">
+                        <img src="assets/images/blog/digital-transformation.jpg" alt="Digital transformation concept illustration" loading="lazy" width="400" height="220">
                         <div class="blog-date">
                             <span>02</span>
                             <span>Jun 2023</span>
@@ -394,13 +452,13 @@
                     <div class="blog-content">
                         <h3><a href="blog/digital-transformation.html">The Essential Guide to Business Digital Transformation</a></h3>
                         <p>How to successfully navigate the digital transformation journey for your business.</p>
-                        <a href="blog/digital-transformation.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog/digital-transformation.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" role="article">
                     <div class="blog-image">
-                        <img src="assets/images/blog/startup-funding.jpg" alt="Startup Funding">
+                        <img src="assets/images/blog/startup-funding.jpg" alt="Startup funding concept illustration" loading="lazy" width="400" height="220">
                         <div class="blog-date">
                             <span>18</span>
                             <span>May 2023</span>
@@ -409,7 +467,7 @@
                     <div class="blog-content">
                         <h3><a href="blog/startup-funding.html">Startup Funding Options in India: 2023 Landscape</a></h3>
                         <p>Explore the current funding ecosystem for startups and how to position your business.</p>
-                        <a href="blog/startup-funding.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog/startup-funding.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </article>
             </div>
@@ -420,17 +478,18 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
+    <!-- Newsletter Section with better form semantics -->
+    <section class="newsletter-section" role="region" aria-labelledby="newsletter-heading">
         <div class="container">
             <div class="newsletter-content">
                 <div class="newsletter-text">
-                    <h3>Stay Updated</h3>
+                    <h3 id="newsletter-heading">Stay Updated</h3>
                     <p>Subscribe to our newsletter for the latest business insights, tax updates, and exclusive offers.</p>
                 </div>
                 <div class="newsletter-form">
-                    <form id="newsletterForm">
-                        <input type="email" placeholder="Your Email Address" required>
+                    <form id="newsletterForm" aria-label="Newsletter subscription form">
+                        <label for="newsletter-email" class="sr-only">Your Email Address</label>
+                        <input type="email" id="newsletter-email" placeholder="Your Email Address" required>
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -438,18 +497,18 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Footer with improved semantics -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-about">
-                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo" loading="lazy" width="180" height="60">
                     <p>Compus Business Consulting Services Private Limited is a premier consulting firm providing expert business solutions since 2008.</p>
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Visit our Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Visit our Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 
@@ -479,24 +538,24 @@
                 
                 <div class="footer-col footer-contact">
                     <h4>Contact Us</h4>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
+                    <address class="contact-info">
+                        <div>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <span>123 Business Tower, MG Road, Bangalore, Karnataka 560001</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
                             <span><a href="tel:+919876543210">+91 98765 43210</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <span><a href="mailto:info@compusindia.com">info@compusindia.com</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                             <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
-                        </li>
-                    </ul>
+                        </div>
+                    </address>
                 </div>
             </div>
             
@@ -515,20 +574,54 @@
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <!-- Back to Top with ARIA -->
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/animations.js"></script>
+    <!-- JavaScript with defer and async where appropriate -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/animations.js" defer></script>
     
     <!-- Appointment Form Handling -->
     <script>
-        // This would be replaced with actual form handling code
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Form submission logic would go here
-            alert('Thank you for your appointment request. We will contact you shortly to confirm.');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                this.setAttribute('aria-expanded', this.classList.contains('active'));
+            });
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            // Preloader
+            window.addEventListener('load', function() {
+                const preloader = document.querySelector('.preloader');
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
+            
+            // Form handling
+            document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                // Here you would typically send the data to your server
+                console.log('Subscribed with:', email);
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            });
         });
     </script>
 </body>
