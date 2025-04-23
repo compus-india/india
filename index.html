@@ -3,60 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compus India | Elite Business Consulting Services</title>
-    <meta name="description" content="Premium business consulting, tax optimization, and strategic advisory services for discerning clients">
+    <title>Compus India | Elite Business Consulting</title>
+    <meta name="description" content="Premium business consulting and strategic advisory services">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- GSAP for advanced animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
-    <!-- SplideJS for premium sliders -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body class="premium-theme">
-    <!-- Preloader with premium animation -->
+    <!-- Preloader -->
     <div class="preloader">
-        <div class="preloader-content">
-            <div class="loader-circle"></div>
-            <div class="loader-logo">
-                <svg viewBox="0 0 200 50" class="logo-svg">
-                    <path class="logo-path" fill="none" stroke="#FFC857" stroke-width="2" stroke-dasharray="200" stroke-dashoffset="200" d="M10,25 L40,25 M40,25 L25,45 M25,45 L40,65 M40,65 L10,65 M60,25 L90,25 M90,25 L75,45 M75,45 L90,65 M90,65 L60,65 M110,25 L140,25 M140,25 L125,45 M125,45 L140,65 M140,65 L110,65 M160,25 L190,25 M190,25 L175,45 M175,45 L190,65 M190,65 L160,65"/>
-                </svg>
-            </div>
-        </div>
+        <div class="loader-circle"></div>
+        <img src="images/compus-logo-white.png" alt="Compus India" class="loader-logo">
     </div>
 
-    <!-- Floating Particles Background -->
-    <div class="particles-container">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-
-    <!-- Header with Glass Morphism Effect -->
+    <!-- Header -->
     <header class="header glass-header">
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/compus-logo-white.png" alt="Compus India Logo" class="logo-light">
-                    <img src="images/compus-logo-dark.png" alt="Compus India Logo" class="logo-dark">
+                    <img src="images/compus-logo-white.png" alt="Compus India Logo" class="logo-img">
                 </a>
             </div>
             
@@ -64,18 +37,8 @@
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu glass-dropdown">
-                            <a href="services/business-consulting.html"><i class="fas fa-chart-line"></i> Business Consulting</a>
-                            <a href="services/tax-solutions.html"><i class="fas fa-file-invoice-dollar"></i> Tax Solutions</a>
-                            <a href="services/compliance-services.html"><i class="fas fa-balance-scale"></i> Compliance</a>
-                            <a href="services/financial-advisory.html"><i class="fas fa-briefcase"></i> Financial Advisory</a>
-                            <a href="services/startup-services.html"><i class="fas fa-lightbulb"></i> Startup Services</a>
-                        </div>
-                    </li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="insights.html">Insights</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li class="nav-cta"><a href="appointment.html" class="btn btn-gold">Schedule Consultation</a></li>
                 </ul>
@@ -89,845 +52,203 @@
         </div>
     </header>
 
-    <!-- Hero Section with Parallax Effect -->
-    <section class="hero parallax-hero">
-        <div class="parallax-bg" data-depth="0.2"></div>
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
         <div class="container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero-content" data-aos="fade-up">
                 <h6 class="hero-subtitle">Premium Business Advisory</h6>
                 <h1 class="hero-title">Elevating <span class="text-gradient">Enterprise</span> Performance</h1>
-                <p class="hero-text">Strategic consulting services for discerning clients who demand excellence, discretion, and measurable results.</p>
+                <p class="hero-text">Strategic consulting services for discerning clients who demand excellence and measurable results.</p>
                 <div class="hero-btns">
-                    <a href="services.html" class="btn btn-gold btn-icon">
-                        <span>Explore Services</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="appointment.html" class="btn btn-transparent btn-icon">
-                        <span>Book Strategy Session</span>
-                        <i class="fas fa-calendar"></i>
-                    </a>
+                    <a href="services.html" class="btn btn-gold">Explore Services</a>
+                    <a href="appointment.html" class="btn btn-transparent">Book Strategy Session</a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="hero-scroll-down">
-            <a href="#about" class="scroll-circle">
-                <span class="scroll-arrow"></span>
-            </a>
-        </div>
-        
-        <div class="hero-marquee">
-            <div class="marquee-content">
-                <span>Strategic Advisory</span>
-                <i class="fas fa-circle"></i>
-                <span>Tax Optimization</span>
-                <i class="fas fa-circle"></i>
-                <span>Business Transformation</span>
-                <i class="fas fa-circle"></i>
-                <span>Financial Excellence</span>
-                <i class="fas fa-circle"></i>
-                <span>Compliance Mastery</span>
             </div>
         </div>
     </section>
 
-    <!-- Trust Indicators Section -->
+    <!-- Trust Indicators -->
     <section class="trust-indicators">
         <div class="container">
             <div class="indicators-grid">
                 <div class="indicator-card" data-aos="fade-up">
-                    <div class="indicator-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>15+</h3>
-                        <p>Years of Excellence</p>
-                    </div>
+                    <i class="fas fa-medal"></i>
+                    <h3>15+</h3>
+                    <p>Years of Excellence</p>
                 </div>
                 
                 <div class="indicator-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="indicator-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>200+</h3>
-                        <p>Premium Clients</p>
-                    </div>
+                    <i class="fas fa-users"></i>
+                    <h3>200+</h3>
+                    <p>Premium Clients</p>
                 </div>
                 
                 <div class="indicator-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="indicator-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>50+</h3>
-                        <p>Industry Awards</p>
-                    </div>
-                </div>
-                
-                <div class="indicator-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="indicator-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>35%</h3>
-                        <p>Avg. Client Growth</p>
-                    </div>
+                    <i class="fas fa-trophy"></i>
+                    <h3>50+</h3>
+                    <p>Industry Awards</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Animated Elements -->
+    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
+            <div class="section-header" data-aos="fade-up">
                 <h6 class="section-subtitle">About Our Firm</h6>
                 <h2 class="section-title">Redefining <span class="text-gradient">Business</span> Consulting</h2>
-                <p class="section-description">Where strategic insight meets operational excellence</p>
             </div>
             
             <div class="about-content">
                 <div class="about-media" data-aos="fade-right">
-                    <div class="media-wrapper">
-                        <div class="main-image tilt-element">
-                            <img src="assets/images/about-team-premium.jpg" alt="Compus India Executive Team">
-                        </div>
-                        <div class="experience-badge pulse-element">
-                            <span>15+ Years</span>
-                            <p>Elite Experience</p>
-                        </div>
-                        <div class="floating-element floating-1">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="floating-element floating-2">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                    </div>
+                    <img src="assets/images/about-team-premium.jpg" alt="Compus India Team">
                 </div>
                 
                 <div class="about-text" data-aos="fade-left">
                     <h3>Strategic Partners for Discerning Businesses</h3>
-                    <p>Compus Business Consulting Services Private Limited represents the pinnacle of strategic advisory services, catering exclusively to businesses that demand the highest level of expertise and discretion.</p>
+                    <p>Compus Business Consulting Services represents the pinnacle of strategic advisory services, catering exclusively to businesses that demand the highest level of expertise.</p>
                     
                     <div class="about-features">
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chess-queen"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Strategic Vision</h4>
-                                <p>Long-term planning with precision execution</p>
-                            </div>
+                            <i class="fas fa-chess-queen"></i>
+                            <h4>Strategic Vision</h4>
+                            <p>Long-term planning with precision execution</p>
                         </div>
                         
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-fingerprint"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Bespoke Solutions</h4>
-                                <p>Tailored to your unique business DNA</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Discretion Assured</h4>
-                                <p>Absolute confidentiality guaranteed</p>
-                            </div>
+                            <i class="fas fa-fingerprint"></i>
+                            <h4>Bespoke Solutions</h4>
+                            <p>Tailored to your unique business needs</p>
                         </div>
                     </div>
                     
-                    <div class="about-actions">
-                        <a href="about.html" class="btn btn-gold-outline">
-                            <span>Our Heritage</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="case-studies.html" class="btn btn-text">
-                            <span>Client Successes</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                    <a href="about.html" class="btn btn-gold-outline">Our Heritage</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section with Interactive Cards -->
+    <!-- Services Section -->
     <section class="services-section">
         <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
+            <div class="section-header" data-aos="fade-up">
                 <h6 class="section-subtitle">Our Offerings</h6>
                 <h2 class="section-title">Elite <span class="text-gradient">Consulting</span> Services</h2>
-                <p class="section-description">Comprehensive solutions for complex business challenges</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-chess"></i>
-                            </div>
-                            <h3>Strategic Advisory</h3>
-                            <p>High-level guidance for enterprise growth and market dominance</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Strategic Advisory</h3>
-                            <ul>
-                                <li>Market Positioning</li>
-                                <li>Competitive Strategy</li>
-                                <li>Growth Frameworks</li>
-                                <li>Exit Planning</li>
-                            </ul>
-                            <a href="services/strategic-advisory.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="service-card" data-aos="fade-up">
+                    <i class="fas fa-chess"></i>
+                    <h3>Strategic Advisory</h3>
+                    <p>High-level guidance for enterprise growth and market dominance</p>
+                    <a href="services/strategic-advisory.html" class="btn btn-text">Learn More</a>
                 </div>
                 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            <h3>Tax Optimization</h3>
-                            <p>Sophisticated strategies to legally minimize tax liabilities</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Tax Optimization</h3>
-                            <ul>
-                                <li>International Tax</li>
-                                <li>Wealth Preservation</li>
-                                <li>Entity Structuring</li>
-                                <li>Audit Defense</li>
-                            </ul>
-                            <a href="services/tax-optimization.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Tax Optimization</h3>
+                    <p>Sophisticated strategies to legally minimize tax liabilities</p>
+                    <a href="services/tax-optimization.html" class="btn btn-text">Learn More</a>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <h3>Business Transformation</h3>
-                            <p>Fundamental restructuring for operational excellence</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Business Transformation</h3>
-                            <ul>
-                                <li>Process Reengineering</li>
-                                <li>Digital Transformation</li>
-                                <li>Cost Restructuring</li>
-                                <li>Change Management</li>
-                            </ul>
-                            <a href="services/business-transformation.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3>M&A Advisory</h3>
-                            <p>Strategic guidance for mergers, acquisitions and divestitures</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>M&A Advisory</h3>
-                            <ul>
-                                <li>Deal Structuring</li>
-                                <li>Due Diligence</li>
-                                <li>Valuation Services</li>
-                                <li>Integration Planning</li>
-                            </ul>
-                            <a href="services/ma-advisory.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3>Innovation Strategy</h3>
-                            <p>Fostering innovation and disruptive thinking</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Innovation Strategy</h3>
-                            <ul>
-                                <li>Emerging Tech</li>
-                                <li>R&D Strategy</li>
-                                <li>IP Strategy</li>
-                                <li>Innovation Culture</li>
-                            </ul>
-                            <a href="services/innovation-strategy.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h3>Executive Advisory</h3>
-                            <p>Personalized counsel for C-suite leaders</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Executive Advisory</h3>
-                            <ul>
-                                <li>Leadership Development</li>
-                                <li>Succession Planning</li>
-                                <li>Decision Frameworks</li>
-                                <li>Crisis Management</li>
-                            </ul>
-                            <a href="services/executive-advisory.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-footer" data-aos="fade-up">
-                <a href="services.html" class="btn btn-gold">
-                    <span>Discover All Services</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section with Animated Timeline -->
-    <section class="process-section">
-        <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
-                <h6 class="section-subtitle">Our Methodology</h6>
-                <h2 class="section-title">The Compus <span class="text-gradient">Approach</span></h2>
-                <p class="section-description">A proven framework for delivering exceptional results</p>
-            </div>
-            
-            <div class="process-timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">01</div>
-                        <h3>Discovery & Assessment</h3>
-                        <p>Comprehensive analysis of your business landscape, challenges, and opportunities through our proprietary diagnostic tools.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">02</div>
-                        <h3>Strategy Formulation</h3>
-                        <p>Development of customized strategies with clear implementation roadmaps and measurable KPIs.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">03</div>
-                        <h3>Execution Excellence</h3>
-                        <p>Hands-on implementation support with our team working alongside yours to ensure flawless execution.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">04</div>
-                        <h3>Performance Optimization</h3>
-                        <p>Ongoing refinement and adjustment to strategies based on real-time performance data and market shifts.</p>
-                    </div>
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Business Transformation</h3>
+                    <p>Fundamental restructuring for operational excellence</p>
+                    <a href="services/business-transformation.html" class="btn btn-text">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section with Premium Slider -->
+    <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
+            <div class="section-header" data-aos="fade-up">
                 <h6 class="section-subtitle">Client Voices</h6>
                 <h2 class="section-title">Trusted by <span class="text-gradient">Leaders</span></h2>
-                <p class="section-description">Hear from executives who have transformed their businesses with our guidance</p>
             </div>
             
-            <div class="splide testimonial-slider" data-aos="fade-up">
-                <div class="splide__track">
-                    <div class="splide__list">
-                        <div class="splide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-quote">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>"Compus India's strategic guidance transformed our market position. Their tax optimization strategies alone saved us ₹2.8 crore in the first year while maintaining full compliance."</p>
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="assets/images/clients/rajiv-sharma.jpg" alt="Rajiv Sharma">
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Rajiv Sharma</h4>
-                                        <p>CEO, Sharma Textiles</p>
-                                        <div class="author-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Compus India's strategic guidance transformed our market position. Their tax optimization strategies alone saved us ₹2.8 crore in the first year."</p>
+                    <div class="testimonial-author">
+                        <h4>Rajiv Sharma</h4>
+                        <p>CEO, Sharma Textiles</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        
-                        <div class="splide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-quote">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>"The business restructuring plan from Compus helped us streamline operations and increase profitability by 42% in just 9 months. Their insights were transformative."</p>
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="assets/images/clients/priya-patel.jpg" alt="Priya Patel">
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Priya Patel</h4>
-                                        <p>Founder, GreenTech Solutions</p>
-                                        <div class="author-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="splide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-quote">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>"Their M&A advisory was instrumental in our successful acquisition. The due diligence uncovered critical issues that saved us from a potentially disastrous deal."</p>
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="assets/images/clients/amit-desai.jpg" alt="Amit Desai">
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Amit Desai</h4>
-                                        <p>Co-Founder, TechNova</p>
-                                        <div class="author-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-brands">
-                <div class="brands-slider">
-                    <div class="brand-item">
-                        <img src="assets/images/brands/brand-1.png" alt="Client Brand">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/images/brands/brand-2.png" alt="Client Brand">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/images/brands/brand-3.png" alt="Client Brand">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/images/brands/brand-4.png" alt="Client Brand">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/images/brands/brand-5.png" alt="Client Brand">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section with Video Background -->
+    <!-- CTA Section -->
     <section class="cta-section">
-        <div class="video-background">
-            <video autoplay muted loop>
-                <source src="assets/videos/cta-background.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        
         <div class="container">
             <div class="cta-content" data-aos="fade-up">
                 <h2>Ready to Elevate Your Business?</h2>
-                <p class="cta-text">Schedule a confidential consultation with our senior partners to explore how we can drive exceptional results for your organization.</p>
-                <div class="cta-actions">
-                    <a href="appointment.html" class="btn btn-gold btn-large">
-                        <span>Book Strategy Session</span>
-                        <i class="fas fa-calendar"></i>
-                    </a>
-                    <a href="tel:+919876543210" class="btn btn-white-outline btn-large">
-                        <span>Call Senior Partner</span>
-                        <i class="fas fa-phone"></i>
-                    </a>
-                </div>
+                <p>Schedule a confidential consultation with our senior partners.</p>
+                <a href="appointment.html" class="btn btn-gold">Book Strategy Session</a>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section with Premium Layout -->
-    <section class="insights-section">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="header-content">
-                    <h6 class="section-subtitle">Latest Thinking</h6>
-                    <h2 class="section-title">Strategic <span class="text-gradient">Insights</span></h2>
-                    <p class="section-description">Cutting-edge perspectives on business challenges and opportunities</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <p>Premier advisory firm for clients who demand excellence and transformative results.</p>
                 </div>
-                <div class="header-action" data-aos="fade-up" data-aos-delay="200">
-                    <a href="insights.html" class="btn btn-text">
-                        <span>View All Insights</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services/strategic-advisory.html">Strategic Advisory</a></li>
+                        <li><a href="services/tax-optimization.html">Tax Optimization</a></li>
+                        <li><a href="services/business-transformation.html">Business Transformation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai 400013</li>
+                        <li><i class="fas fa-phone"></i> +91 22 6666 7777</li>
+                        <li><i class="fas fa-envelope"></i> info@compusindia.com</li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="insights-grid">
-                <article class="insight-card featured-card" data-aos="fade-up">
-                    <div class="card-image">
-                        <img src="assets/images/insights/featured-insight.jpg" alt="Featured Insight">
-                        <div class="card-badge">
-                            <span>Featured</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="meta-category">Tax Strategy</span>
-                            <span class="meta-date">June 15, 2023</span>
-                        </div>
-                        <h3 class="card-title"><a href="insights/tax-changes-2023.html">Navigating the New Tax Landscape: 2023 Updates for High-Growth Businesses</a></h3>
-                        <p class="card-excerpt">Comprehensive analysis of recent tax reforms and strategic approaches to optimize your fiscal position while maintaining full compliance.</p>
-                        <a href="insights/tax-changes-2023.html" class="card-link">
-                            <span>Read Insight</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-                
-                <article class="insight-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-image">
-                        <img src="assets/images/insights/digital-transformation.jpg" alt="Digital Transformation">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="meta-category">Business Strategy</span>
-                            <span class="meta-date">June 2, 2023</span>
-                        </div>
-                        <h3 class="card-title"><a href="insights/digital-transformation.html">The Executive's Guide to Digital Transformation Success</a></h3>
-                        <p class="card-excerpt">Key frameworks for leading successful digital initiatives that deliver measurable ROI and competitive advantage.</p>
-                        <a href="insights/digital-transformation.html" class="card-link">
-                            <span>Read Insight</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-                
-                <article class="insight-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-image">
-                        <img src="assets/images/insights/mergers-acquisitions.jpg" alt="Mergers & Acquisitions">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="meta-category">M&A</span>
-                            <span class="meta-date">May 18, 2023</span>
-                        </div>
-                        <h3 class="card-title"><a href="insights/mergers-acquisitions.html">Post-Merger Integration: The Hidden Key to Deal Success</a></h3>
-                        <p class="card-excerpt">Why 70% of mergers fail to deliver expected value and how to ensure your deal beats the odds.</p>
-                        <a href="insights/mergers-acquisitions.html" class="card-link">
-                            <span>Read Insight</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section with Glass Effect -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-card glass-card" data-aos="fade-up">
-                <div class="card-content">
-                    <h3 class="card-title">Join Our Executive Briefing</h3>
-                    <p class="card-text">Receive exclusive insights, strategic analyses, and premium content curated for business leaders.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Professional Email" required>
-                            <button type="submit" class="btn btn-gold">
-                                <span>Subscribe</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <div class="form-agreement">
-                            <p>We respect your privacy. Unsubscribe at any time.</p>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-image">
-                    <img src="assets/images/newsletter-image.png" alt="Executive Newsletter">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer with Premium Design -->
-    <footer class="footer">
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col footer-about" data-aos="fade-up">
-                        <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
-                        <p class="footer-about-text">Compus Business Consulting Services Private Limited is the premier advisory firm for discerning clients who demand excellence, discretion, and transformative results.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-col footer-services" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="footer-title">Services</h4>
-                        <ul class="footer-links">
-                            <li><a href="services/strategic-advisory.html">Strategic Advisory</a></li>
-                            <li><a href="services/tax-optimization.html">Tax Optimization</a></li>
-                            <li><a href="services/business-transformation.html">Business Transformation</a></li>
-                            <li><a href="services/ma-advisory.html">M&A Advisory</a></li>
-                            <li><a href="services/innovation-strategy.html">Innovation Strategy</a></li>
-                            <li><a href="services/executive-advisory.html">Executive Advisory</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col footer-contact" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="footer-title">Contact</h4>
-                        <ul class="footer-contact-info">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Level 12, One International Centre, Senapati Bapat Marg, Mumbai 400013</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+912266667777">+91 22 6666 7777</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:info@compusindia.com">info@compusindia.com</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-clock"></i>
-                                <span>Mon-Fri: 9:00 AM - 7:00 PM</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col footer-cta" data-aos="fade-up" data-aos-delay="300">
-                        <h4 class="footer-title">Schedule Consultation</h4>
-                        <p class="footer-cta-text">Ready to discuss your strategic needs with our senior partners?</p>
-                        <a href="appointment.html" class="btn btn-gold btn-block">
-                            <span>Book Appointment</span>
-                            <i class="fas fa-calendar"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-secondary">
-            <div class="container">
-                <div class="footer-bottom">
-                    <div class="footer-copyright">
-                        <p>&copy; 2023 Compus Business Consulting Services Private Limited. All Rights Reserved.</p>
-                    </div>
-                    <div class="footer-legal">
-                        <ul>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                            <li><a href="disclaimer.html">Disclaimer</a></li>
-                        </ul>
-                    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Compus Business Consulting Services. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="assets/js/main.js"></script>
     
-    <!-- Initialize AOS -->
     <script>
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
             once: true
-        });
-    </script>
-    
-    <!-- Initialize Splide Slider -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new Splide('.testimonial-slider', {
-                type: 'loop',
-                perPage: 1,
-                autoplay: true,
-                interval: 5000,
-                pauseOnHover: true,
-                arrows: false,
-                pagination: false
-            }).mount();
-            
-            // Initialize brands slider if needed
-            new Splide('.brands-slider', {
-                type: 'loop',
-                perPage: 5,
-                autoplay: true,
-                interval: 3000,
-                pauseOnHover: false,
-                arrows: false,
-                pagination: false,
-                breakpoints: {
-                    992: {
-                        perPage: 4
-                    },
-                    768: {
-                        perPage: 3
-                    },
-                    576: {
-                        perPage: 2
-                    }
-                }
-            }).mount();
-        });
-    </script>
-    
-    <!-- GSAP Animations -->
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Animate logo on load
-        gsap.from(".logo-path", {
-            strokeDashoffset: 200,
-            duration: 2,
-            ease: "power2.inOut"
-        });
-        
-        // Parallax effect for hero
-        gsap.to(".parallax-bg", {
-            yPercent: 20,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".parallax-hero",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
         });
     </script>
 </body>
