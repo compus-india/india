@@ -1,19 +1,19 @@
 /* Premium Color Scheme - Elegant & Modern */
 :root {
-  --primary-color: #0A2463;      /* Deep Sapphire Blue */
-  --secondary-color: #3E5C76;    /* Muted Steel Blue */
-  --accent-color: #FF6B6B;       /* Coral Pink */
-  --accent-dark: #E05555;        /* Darker Coral */
-  --text-dark: #1E1E24;         /* Almost Black */
-  --text-light: #F7F7F7;        /* Soft White */
-  --gray-bg: #F8F9FA;           /* Light Gray */
-  --light-bg: #F0F4F8;          /* Very Light Blue */
-  --dark-bg: #0A1A2F;           /* Navy Blue */
-  --gold-accent: #D4AF37;       /* Metallic Gold */
-  --platinum: #E5E4E2;          /* Platinum */
+  --primary-color: #1A3A5F;      /* Deep Navy Blue */
+  --secondary-color: #4A6B8A;    /* Muted Steel Blue */
+  --accent-color: #D4A259;       /* Warm Gold */
+  --accent-dark: #B88A4B;        /* Darker Gold */
+  --text-dark: #2D3748;         /* Dark Gray */
+  --text-light: #F8FAFC;        /* Soft White */
+  --gray-bg: #F5F7FA;           /* Light Gray */
+  --light-bg: #EDF2F7;          /* Very Light Blue */
+  --dark-bg: #0F172A;           /* Dark Navy */
+  --highlight: #E6B85C;         /* Brighter Gold */
+  --platinum: #E2E8F0;          /* Platinum */
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --box-shadow: 0 10px 30px rgba(10, 36, 99, 0.1);
-  --box-shadow-hover: 0 15px 40px rgba(10, 36, 99, 0.2);
+  --box-shadow: 0 10px 30px rgba(26, 58, 95, 0.1);
+  --box-shadow-hover: 0 15px 40px rgba(26, 58, 95, 0.2);
   --border-radius: 12px;
 }
 
@@ -102,13 +102,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
-  color: var(--text-light);
-  box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 5px 20px rgba(212, 162, 89, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 8px 25px rgba(212, 162, 89, 0.4);
 }
 
 .btn-secondary {
@@ -179,15 +177,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Premium Hero Section */
 .hero {
-  height: 100vh;
-  min-height: 800px;
-  background: linear-gradient(135deg, rgba(10, 36, 99, 0.9) 0%, rgba(62, 92, 118, 0.9) 100%),
+  background: linear-gradient(135deg, rgba(26, 58, 95, 0.9) 0%, rgba(74, 107, 138, 0.9) 100%),
               url('assets/images/hero-bg-premium.jpg') center/cover no-repeat;
-  color: var(--text-light);
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero::before {
@@ -272,8 +263,6 @@ h1, h2, h3, h4, h5, h6 {
 .cta-section {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%),
               url('assets/images/cta-pattern.png') center/cover;
-  position: relative;
-  overflow: hidden;
 }
 
 .cta-section::before {
