@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compus India | Business & Tax Consulting Services</title>
-    <!-- Your existing head content -->
+    <meta name="description" content="Professional business consulting and tax optimization services for growing enterprises">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         /* Navigation Styles */
         .header {
@@ -127,9 +143,57 @@
         
         .mobile-menu-btn {
             display: none;
-            font-size: 24px;
+            width: 30px;
+            height: 24px;
+            position: relative;
             cursor: pointer;
-            color: #333;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #333;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .mobile-menu-btn span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .mobile-menu-btn span:nth-child(2),
+        .mobile-menu-btn span:nth-child(3) {
+            top: 10px;
+        }
+        
+        .mobile-menu-btn span:nth-child(4) {
+            top: 20px;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            top: 10px;
+            width: 0%;
+            left: 50%;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(4) {
+            top: 10px;
+            width: 0%;
+            left: 50%;
         }
         
         /* Mobile Navigation */
@@ -201,12 +265,18 @@
                 display: none;
             }
             
+            .mobile-cta {
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
             .dropdown > a::after {
                 content: '+';
                 margin-left: auto;
                 transition: transform 0.3s ease;
             }
-            
+        
             .dropdown.active > a::after {
                 content: '-';
             }
@@ -214,6 +284,11 @@
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container nav-container">
@@ -233,12 +308,9 @@
                             <li><a href="services/business-consulting.html">Business Consulting</a></li>
                             <li><a href="services/tax-solutions.html">Tax Solutions</a></li>
                             <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
-                            <li><a href="services/startup-support.html">Startup Support</a></li>
-                            <li><a href="services/compliance.html">Regulatory Compliance</a></li>
                         </ul>
                     </li>
                     <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="blog.html">Insights</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 
@@ -255,13 +327,193 @@
                 <span></span>
                 <span></span>
                 <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
-    <!-- Rest of your content -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h6 class="hero-subtitle">Professional Business Solutions</h6>
+                <h1>Strategic <span>Consulting</span> Services</h1>
+                <p class="lead">Expert guidance to optimize your business operations and tax strategies for sustainable growth.</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">Our Services</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-down">
+            <a href="#services-section"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p class="subheading">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Consulting</h3>
+                    <p>Strategic planning and operational improvements to drive business growth and efficiency.</p>
+                    <a href="services/business-consulting.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Tax Solutions</h3>
+                    <p>Comprehensive tax planning and compliance services to optimize your financial position.</p>
+                    <a href="services/tax-solutions.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Financial Advisory</h3>
+                    <p>Expert financial guidance to help you make informed business decisions.</p>
+                    <a href="services/financial-advisory.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Approach</span></h2>
+                <p class="subheading">A structured methodology for delivering results</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card" data-aos="fade-up">
+                    <div class="advantage-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Needs Assessment</h3>
+                    <p>Thorough analysis of your business requirements and challenges.</p>
+                </div>
+                
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Strategy Development</h3>
+                    <p>Customized solutions designed to address your specific needs.</p>
+                </div>
+                
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Implementation</h3>
+                    <p>Practical execution with measurable results and ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Transform Your Business?</h2>
+                <p class="lead">Get in touch with our experts to discuss how we can help your business grow.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Compus</h4>
+                    <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <p>Professional business consulting and tax advisory services to help your business thrive.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Business Center, Mumbai, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+912234567890">+91 22 3456 7890</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@compusindia.com">info@compusindia.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Compus Consulting. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').addClass('fade-out');
+            setTimeout(function() {
+                $('.preloader').remove();
+            }, 500);
+        });
+        
         // Enhanced Mobile Menu Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -341,6 +593,27 @@
                         });
                     }
                 });
+            });
+            
+            // Back to Top Button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#backToTop').addClass('active');
+                } else {
+                    $('#backToTop').removeClass('active');
+                }
+            });
+            
+            $('#backToTop').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop: 0}, '300');
+            });
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
             });
         });
     </script>
