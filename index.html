@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="main (3).css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -21,17 +21,10 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="premium-theme">
+<body>
     <!-- Preloader -->
     <div class="preloader">
-        <div class="preloader-content">
-            <div class="loader-circle"></div>
-            <div class="loader-logo">
-                <svg viewBox="0 0 200 50" class="logo-svg">
-                    <path class="logo-path" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="200" stroke-dashoffset="200" d="M10,25 L40,25 M40,25 L25,45 M25,45 L40,65 M40,65 L10,65 M60,25 L90,25 M90,25 L75,45 M75,45 L90,65 M90,65 L60,65 M110,25 L140,25 M140,25 L125,45 M125,45 L140,65 M140,65 L110,65 M160,25 L190,25 M190,25 L175,45 M175,45 L190,65 M190,65 L160,65"/>
-                </svg>
-            </div>
-        </div>
+        <div class="loader"></div>
     </div>
 
     <!-- Header -->
@@ -39,8 +32,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/compus-logo-white.png" alt="Compus India Logo" class="logo-light">
-                    <img src="images/compus-logo-dark.png" alt="Compus India Logo" class="logo-dark">
+                    <img src="images/compus-logo-dark.png" alt="Compus India Logo">
                 </a>
             </div>
             
@@ -51,16 +43,19 @@
                     <li class="dropdown">
                         <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services/business-consulting.html"><i class="fas fa-chart-line"></i> Business Consulting</a>
-                            <a href="services/tax-solutions.html"><i class="fas fa-file-invoice-dollar"></i> Tax Solutions</a>
-                            <a href="services/financial-advisory.html"><i class="fas fa-briefcase"></i> Financial Advisory</a>
+                            <a href="services/business-consulting.html">Business Consulting</a>
+                            <a href="services/tax-solutions.html">Tax Solutions</a>
+                            <a href="services/financial-advisory.html">Financial Advisory</a>
                         </div>
                     </li>
                     <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-cta"><a href="appointment.html" class="btn btn-gold">Schedule Consultation</a></li>
                 </ul>
             </nav>
+            
+            <div class="nav-cta">
+                <a href="appointment.html" class="btn btn-primary">Schedule Consultation</a>
+            </div>
             
             <div class="mobile-menu-btn">
                 <span></span>
@@ -72,68 +67,43 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                 <h6 class="hero-subtitle">Premium Business Advisory</h6>
-                <h1 class="hero-title">Elevating <span class="text-gradient">Enterprise</span> Performance</h1>
-                <p class="hero-text">Strategic consulting services for discerning clients who demand excellence, discretion, and measurable results.</p>
+                <h1>Elevating <span>Enterprise</span> Performance</h1>
+                <p class="lead">Strategic consulting services for discerning clients who demand excellence, discretion, and measurable results.</p>
                 <div class="hero-btns">
-                    <a href="services.html" class="btn btn-gold btn-icon">
-                        <span>Explore Services</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="appointment.html" class="btn btn-transparent btn-icon">
-                        <span>Book Strategy Session</span>
-                        <i class="fas fa-calendar"></i>
-                    </a>
+                    <a href="services.html" class="btn btn-primary">Explore Services</a>
+                    <a href="appointment.html" class="btn btn-outline">Book Strategy Session</a>
                 </div>
             </div>
+        </div>
+        
+        <div class="hero-scroll-down">
+            <a href="#trust-badges"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
     <!-- Trust Indicators Section -->
-    <section class="trust-indicators">
+    <section class="trust-badges" id="trust-badges">
         <div class="container">
-            <div class="indicators-grid">
-                <div class="indicator-card" data-aos="fade-up">
-                    <div class="indicator-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>15+</h3>
-                        <p>Years of Excellence</p>
-                    </div>
+            <div class="section-header">
+                <h2>Trusted By Industry Leaders</h2>
+                <p class="subheading">We partner with organizations that value excellence and discretion</p>
+            </div>
+            
+            <div class="badges-container">
+                <div class="badge-item">
+                    <img src="images/client-logo1.png" alt="Client Logo">
                 </div>
-                
-                <div class="indicator-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="indicator-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>200+</h3>
-                        <p>Premium Clients</p>
-                    </div>
+                <div class="badge-item">
+                    <img src="images/client-logo2.png" alt="Client Logo">
                 </div>
-                
-                <div class="indicator-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="indicator-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>50+</h3>
-                        <p>Industry Awards</p>
-                    </div>
+                <div class="badge-item">
+                    <img src="images/client-logo3.png" alt="Client Logo">
                 </div>
-                
-                <div class="indicator-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="indicator-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="indicator-content">
-                        <h3>35%</h3>
-                        <p>Avg. Client Growth</p>
-                    </div>
+                <div class="badge-item">
+                    <img src="images/client-logo4.png" alt="Client Logo">
                 </div>
             </div>
         </div>
@@ -142,153 +112,79 @@
     <!-- Services Section -->
     <section class="services-section">
         <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
-                <h6 class="section-subtitle">Our Offerings</h6>
-                <h2 class="section-title">Elite <span class="text-gradient">Consulting</span> Services</h2>
-                <p class="section-description">Comprehensive solutions for complex business challenges</p>
+            <div class="section-header">
+                <h2>Elite <span>Consulting</span> Services</h2>
+                <p class="subheading">Comprehensive solutions for complex business challenges</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-chess"></i>
-                            </div>
-                            <h3>Strategic Advisory</h3>
-                            <p>High-level guidance for enterprise growth and market dominance</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Strategic Advisory</h3>
-                            <ul>
-                                <li>Market Positioning</li>
-                                <li>Competitive Strategy</li>
-                                <li>Growth Frameworks</li>
-                                <li>Exit Planning</li>
-                            </ul>
-                            <a href="services/strategic-advisory.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="service-icon">
+                        <i class="fas fa-chess"></i>
                     </div>
+                    <h3>Strategic Advisory</h3>
+                    <p>High-level guidance for enterprise growth and market dominance</p>
+                    <a href="services/strategic-advisory.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            <h3>Tax Optimization</h3>
-                            <p>Sophisticated strategies to legally minimize tax liabilities</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Tax Optimization</h3>
-                            <ul>
-                                <li>International Tax</li>
-                                <li>Wealth Preservation</li>
-                                <li>Entity Structuring</li>
-                                <li>Audit Defense</li>
-                            </ul>
-                            <a href="services/tax-optimization.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
+                    <h3>Tax Optimization</h3>
+                    <p>Sophisticated strategies to legally minimize tax liabilities</p>
+                    <a href="services/tax-optimization.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3>Financial Advisory</h3>
-                            <p>Strategic financial planning and investment guidance</p>
-                            <div class="service-cta">
-                                <span>Explore Service</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Financial Advisory</h3>
-                            <ul>
-                                <li>Investment Strategy</li>
-                                <li>Capital Raising</li>
-                                <li>Risk Management</li>
-                                <li>Wealth Planning</li>
-                            </ul>
-                            <a href="services/financial-advisory.html" class="btn btn-text">
-                                <span>Learn More</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
+                    <h3>Financial Advisory</h3>
+                    <p>Strategic financial planning and investment guidance</p>
+                    <a href="services/financial-advisory.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="section-footer" data-aos="fade-up">
-                <a href="services.html" class="btn btn-gold">
-                    <span>Discover All Services</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section class="process-section">
+    <section class="why-choose-us">
         <div class="container">
-            <div class="section-header center-header" data-aos="fade-up">
-                <h6 class="section-subtitle">Our Methodology</h6>
-                <h2 class="section-title">The Compus <span class="text-gradient">Approach</span></h2>
-                <p class="section-description">A proven framework for delivering exceptional results</p>
+            <div class="section-header">
+                <h2>The Compus <span>Approach</span></h2>
+                <p class="subheading">A proven framework for delivering exceptional results</p>
             </div>
             
-            <div class="process-timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                        <div class="marker-line"></div>
+            <div class="advantages-grid">
+                <div class="advantage-card" data-aos="fade-up">
+                    <div class="advantage-icon">
+                        <i class="fas fa-search"></i>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">01</div>
-                        <h3>Discovery & Assessment</h3>
-                        <p>Comprehensive analysis of your business landscape, challenges, and opportunities.</p>
-                    </div>
+                    <h3>Discovery & Assessment</h3>
+                    <p>Comprehensive analysis of your business landscape, challenges, and opportunities.</p>
                 </div>
                 
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
-                        <div class="marker-line"></div>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chess-board"></i>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">02</div>
-                        <h3>Strategy Formulation</h3>
-                        <p>Development of customized strategies with clear implementation roadmaps.</p>
-                    </div>
+                    <h3>Strategy Formulation</h3>
+                    <p>Development of customized strategies with clear implementation roadmaps.</p>
                 </div>
                 
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-marker">
-                        <div class="marker-circle"></div>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-number">03</div>
-                        <h3>Execution Excellence</h3>
-                        <p>Hands-on implementation support to ensure flawless execution.</p>
-                    </div>
+                    <h3>Execution Excellence</h3>
+                    <p>Hands-on implementation support to ensure flawless execution.</p>
                 </div>
             </div>
         </div>
@@ -299,16 +195,10 @@
         <div class="container">
             <div class="cta-content" data-aos="fade-up">
                 <h2>Ready to Elevate Your Business?</h2>
-                <p class="cta-text">Schedule a confidential consultation with our senior partners to explore how we can drive exceptional results for your organization.</p>
-                <div class="cta-actions">
-                    <a href="appointment.html" class="btn btn-gold btn-large">
-                        <span>Book Strategy Session</span>
-                        <i class="fas fa-calendar"></i>
-                    </a>
-                    <a href="tel:+919876543210" class="btn btn-white-outline btn-large">
-                        <span>Call Senior Partner</span>
-                        <i class="fas fa-phone"></i>
-                    </a>
+                <p class="lead">Schedule a confidential consultation with our senior partners to explore how we can drive exceptional results for your organization.</p>
+                <div class="cta-buttons">
+                    <a href="appointment.html" class="btn btn-primary">Book Strategy Session</a>
+                    <a href="tel:+919876543210" class="btn btn-secondary">Call Senior Partner</a>
                 </div>
             </div>
         </div>
@@ -316,73 +206,65 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col footer-about" data-aos="fade-up">
-                        <img src="assets/images/compus-logo-white.png" alt="Compus India" class="footer-logo">
-                        <p class="footer-about-text">Compus Business Consulting Services Private Limited is the premier advisory firm for discerning clients who demand excellence, discretion, and transformative results.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-col footer-services" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="footer-title">Services</h4>
-                        <ul class="footer-links">
-                            <li><a href="services/strategic-advisory.html">Strategic Advisory</a></li>
-                            <li><a href="services/tax-optimization.html">Tax Optimization</a></li>
-                            <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col footer-contact" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="footer-title">Contact</h4>
-                        <ul class="footer-contact-info">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Level 12, One International Centre, Mumbai 400013</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+912266667777">+91 22 6666 7777</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:info@compusindia.com">info@compusindia.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col footer-cta" data-aos="fade-up" data-aos-delay="300">
-                        <h4 class="footer-title">Schedule Consultation</h4>
-                        <p class="footer-cta-text">Ready to discuss your strategic needs with our senior partners?</p>
-                        <a href="appointment.html" class="btn btn-gold btn-block">
-                            <span>Book Appointment</span>
-                            <i class="fas fa-calendar"></i>
-                        </a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Compus</h4>
+                    <img src="images/compus-logo-white.png" alt="Compus India" class="footer-logo">
+                    <p>Compus Business Consulting Services Private Limited is the premier advisory firm for discerning clients who demand excellence, discretion, and transformative results.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services/strategic-advisory.html">Strategic Advisory</a></li>
+                        <li><a href="services/tax-optimization.html">Tax Optimization</a></li>
+                        <li><a href="services/financial-advisory.html">Financial Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Level 12, One International Centre, Mumbai 400013</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+912266667777">+91 22 6666 7777</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@compusindia.com">info@compusindia.com</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for industry insights and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
-        </div>
-        
-        <div class="footer-secondary">
-            <div class="container">
-                <div class="footer-bottom">
-                    <div class="footer-copyright">
-                        <p>&copy; 2023 Compus Business Consulting Services Private Limited. All Rights Reserved.</p>
-                    </div>
-                    <div class="footer-legal">
-                        <ul>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Compus Business Consulting Services Private Limited. All Rights Reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -396,10 +278,53 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <!-- Initialize AOS -->
     <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').addClass('fade-out');
+            setTimeout(function() {
+                $('.preloader').remove();
+            }, 500);
+        });
+        
+        // Mobile Menu
+        $('.mobile-menu-btn').click(function() {
+            $(this).toggleClass('active');
+            $('.main-nav').toggleClass('active');
+        });
+        
+        // Dropdown Menu
+        $('.dropdown > a').click(function(e) {
+            if ($(window).width() <= 768) {
+                e.preventDefault();
+                $(this).next('.dropdown-menu').slideToggle();
+            }
+        });
+        
+        // Back to Top Button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Header Scroll Effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.header').addClass('scrolled');
+            } else {
+                $('.header').removeClass('scrolled');
+            }
+        });
+        
+        // Initialize AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
