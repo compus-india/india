@@ -20,14 +20,20 @@
 
     /* Navigation Bar Fixes */
     .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: white;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height); /* Add this line */
+  z-index: 1000;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
     
     .navbar {
       display: flex;
