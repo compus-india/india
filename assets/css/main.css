@@ -215,7 +215,7 @@ section {
   width: 100%;
   height: var(--header-height); /* Add this line */
   z-index: 1000;
-  padding: 0 0; /* optional: remove vertical padding */
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.98);
@@ -238,7 +238,7 @@ section {
 }
 
 .logo img {
-    height: 45px;
+    height: 60px;
     transition: var(--transition);
 }
 
@@ -388,8 +388,8 @@ section {
     align-items: center;
     background: linear-gradient(135deg, rgba(245, 158, 11, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
     overflow: hidden;
+    padding-top: var(--header-height); 
     margin-top: 0;
-    padding-top: var(--header-height);
 }
 
 .hero::before {
