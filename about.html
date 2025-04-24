@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Compus India</title>
+  <title>Contact Us | Compus India</title>
   <!-- Use the same assets as index.html -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,20 +20,20 @@
 
     /* Navigation Bar Fixes */
     .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height); /* Add this line */
-  z-index: 1000;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    }
     
     .navbar {
       display: flex;
@@ -98,68 +98,132 @@
       max-width: 700px;
       margin: 0 auto 50px;
       font-size: 1.1rem;
-      color: var(--gray-dark);
+      color: var(--gray);
     }
 
-    .about-section {
+    .contact-section {
       display: flex;
       flex-wrap: wrap;
       gap: 3rem;
-      background: #fff;
-      padding: 3rem;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
       margin-bottom: 3rem;
     }
 
-    .about-text {
-      flex: 1 1 50%;
-    }
-
-    .about-image {
-      flex: 1 1 40%;
-      display: flex;
-      align-items: center;
-    }
-
-    .about-image img {
-      max-width: 100%;
+    .contact-form {
+      flex: 1 1 60%;
+      background: var(--white);
+      padding: 3rem;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
     }
 
-    .stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
+    .contact-info {
+      flex: 1 1 30%;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
     }
 
-    .stat {
-      background: var(--primary-light);
-      padding: 1.5rem 1rem;
-      border-radius: var(--radius-md);
-      text-align: center;
-      flex: 1;
-      min-width: 120px;
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--darker);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-primary);
+      font-size: 1rem;
       transition: var(--transition);
     }
 
-    .stat:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-sm);
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
     }
 
-    .stat h3 {
-      margin: 0;
-      font-size: 2rem;
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .info-icon {
+      margin-right: 1rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .info-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .info-content p, .info-content a {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .info-content a:hover {
       color: var(--primary);
     }
 
-    .stat p {
-      margin: 0.5rem 0 0;
-      font-weight: 500;
-      color: var(--darker);
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
     }
 
     @media (max-width: 992px) {
@@ -171,12 +235,11 @@
         display: block;
       }
       
-      .about-section {
+      .contact-section {
         flex-direction: column;
-        padding: 2rem;
       }
       
-      .about-text, .about-image {
+      .contact-form, .contact-info {
         flex: 1 1 100%;
       }
     }
@@ -186,13 +249,12 @@
         padding: 120px 0 80px;
       }
       
-      .stats {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
       .logo img {
         height: 40px;
+      }
+      
+      .contact-form, .contact-info {
+        padding: 2rem;
       }
     }
   </style>
@@ -225,7 +287,7 @@
               </ul>
             </li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
           </ul>
           
           <div class="nav-cta">
@@ -243,35 +305,99 @@
   </header>
 
   <main class="container">
-    <h1 data-aos="fade-up">About Compus India</h1>
-    <p class="page-intro" data-aos="fade-up" data-aos-delay="100">Delivering expert business solutions since 2008</p>
+    <h1 data-aos="fade-up">Contact Us</h1>
+    <p class="page-intro" data-aos="fade-up" data-aos-delay="100">Have questions or ready to get started? Reach out to our team today.</p>
 
-    <section class="about-section" data-aos="fade-up" data-aos-delay="200">
-      <div class="about-text">
-        <h2>Who We Are</h2>
-        <p>
-          Compus Business Consulting Services Pvt Ltd is a premier advisory firm offering specialized services in tax, compliance, business growth strategy, and more. Our journey started in 2008 with a vision to empower businesses with transformative solutions.
-        </p>
-        <p>
-          Our team comprises industry veterans, chartered accountants, and technology experts. Together, we ensure that our clients not only meet their compliance needs but also thrive in today's competitive business environment.
-        </p>
-        <div class="stats">
-          <div class="stat" data-aos="fade-up" data-aos-delay="300">
-            <h3>200+</h3>
-            <p>Clients Served</p>
+    <section class="contact-section" data-aos="fade-up" data-aos-delay="200">
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="400">
-            <h3>15+</h3>
-            <p>Years of Experience</p>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="500">
-            <h3>50+</h3>
-            <p>Industry Awards</p>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option value="Business Consulting">Business Consulting</option>
+              <option value="Tax Solutions">Tax Solutions</option>
+              <option value="Financial Advisory">Financial Advisory</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+      </div>
+      
+      <div class="contact-info" data-aos="fade-left" data-aos-delay="300">
+        <h2>Contact Information</h2>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>Our Office</h3>
+            <p>123 Business Avenue, Suite 456<br>Mumbai, Maharashtra 400001</p>
           </div>
         </div>
-      </div>
-      <div class="about-image" data-aos="fade-left" data-aos-delay="300">
-        <img src="https://via.placeholder.com/500x350.png?text=Our+Team" alt="Our Team">
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>Phone</h3>
+            <p><a href="tel:+912234567890">+91 22 3456 7890</a></p>
+            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>Email</h3>
+            <p><a href="mailto:info@compusindia.com">info@compusindia.com</a></p>
+            <p><a href="mailto:support@compusindia.com">support@compusindia.com</a></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="info-content">
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </section>
   </main>
@@ -299,6 +425,14 @@
       $('#mobile-menu-btn').click(function() {
         $('.nav-menu').toggleClass('active');
         $(this).toggleClass('active');
+      });
+
+      // Form submission
+      $('#contactForm').submit(function(e) {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
       });
     });
   </script>
