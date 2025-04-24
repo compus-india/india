@@ -4,41 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Compus India</title>
+  <!-- Use the same assets as appointment.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Reference main.css instead of inline styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: var(--font-primary);
       line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
+      color: var(--darker);
+      background: var(--light);
     }
 
-    header {
-      background-color: #1a237e;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-align: center;
+    main {
+      padding: 180px 0 100px;
     }
 
     .container {
       max-width: 1100px;
-      margin: 2rem auto;
+      margin: 0 auto;
       padding: 0 1rem;
     }
 
     h1, h2 {
-      color: #1a237e;
+      color: var(--primary-dark);
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .page-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: var(--gray-dark);
     }
 
     .about-section {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 3rem;
       background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 3rem;
     }
 
     .about-text {
@@ -47,58 +64,124 @@
 
     .about-image {
       flex: 1 1 40%;
+      display: flex;
+      align-items: center;
     }
 
     .about-image img {
       max-width: 100%;
-      border-radius: 10px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
     }
 
     .stats {
       display: flex;
       gap: 2rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
     }
 
     .stat {
-      background: #e8eaf6;
-      padding: 1rem;
-      border-radius: 6px;
+      background: var(--primary-light);
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius-md);
       text-align: center;
       flex: 1;
+      min-width: 120px;
+      transition: var(--transition);
+    }
+
+    .stat:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
     }
 
     .stat h3 {
       margin: 0;
       font-size: 2rem;
-      color: #3949ab;
+      color: var(--primary);
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1a237e;
-      color: #fff;
-      margin-top: 2rem;
+    .stat p {
+      margin: 0.5rem 0 0;
+      font-weight: 500;
+      color: var(--darker);
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        padding: 2rem;
+      }
+      
+      .about-text, .about-image {
+        flex: 1 1 100%;
+      }
+      
+      .stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
 
-  <header>
-    <h1>About Compus India</h1>
-    <p>Delivering expert business solutions since 2008</p>
+  <!-- Updated Header to match appointment.html -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/compus-logo.png" alt="Compus India Logo">
+          </a>
+        </div>
+
+        <div class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li class="dropdown">
+              <a href="services.html">SERVICES <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="services/business-consulting.html">BUSINESS CONSULTING</a></li>
+                <li><a href="services/tax-solutions.html">TAX SOLUTIONS</a></li>
+                <li><a href="services/financial-advisory.html">FINANCIAL ADVISORY</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+          
+          <div class="nav-cta">
+            <a href="appointment.html" class="btn btn-primary">GET CONSULTATION</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
-    <section class="about-section">
+    <h1>About Compus India</h1>
+    <p class="page-intro">Delivering expert business solutions since 2008</p>
+
+    <section class="about-section" data-aos="fade-up">
       <div class="about-text">
         <h2>Who We Are</h2>
         <p>
           Compus Business Consulting Services Pvt Ltd is a premier advisory firm offering specialized services in tax, compliance, business growth strategy, and more. Our journey started in 2008 with a vision to empower businesses with transformative solutions.
         </p>
         <p>
-          Our team comprises industry veterans, chartered accountants, and technology experts. Together, we ensure that our clients not only meet their compliance needs but also thrive in today’s competitive business environment.
+          Our team comprises industry veterans, chartered accountants, and technology experts. Together, we ensure that our clients not only meet their compliance needs but also thrive in today's competitive business environment.
         </p>
         <div class="stats">
           <div class="stat">
@@ -115,7 +198,7 @@
           </div>
         </div>
       </div>
-      <div class="about-image">
+      <div class="about-image" data-aos="fade-left">
         <img src="https://via.placeholder.com/500x350.png?text=Our+Team" alt="Our Team">
       </div>
     </section>
@@ -125,5 +208,21 @@
     &copy; 2025 Compus India. All Rights Reserved.
   </footer>
 
+  <!-- Scripts - Same as appointment.html -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Initialize AOS animation
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    });
+  </script>
 </body>
 </html>
