@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,66 +12,30 @@
   <!-- Reference main.css instead of inline styles -->
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
-    :root {
-      --font-primary: 'Poppins', sans-serif;
-      --font-secondary: 'Roboto', sans-serif;
-      --primary: #1e88e5;
-      --primary-light: #e3f2fd;
-      --secondary: #00c853;
-      --accent: #ff9800;
-      --darker: #0d47a1;
-      --dark: #1565c0;
-      --gray: #757575;
-      --light: #f5f5f5;
-      --lighter: #fafafa;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
-      --transition: all 0.3s ease;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
     }
 
     main {
       padding: 180px 0 100px;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 1rem;
     }
 
     h1 {
-      font-family: var(--font-primary);
+      margin-bottom: 1rem;
+      color: #0d47a1;
+      text-align: center;
       font-size: 42px;
       font-weight: 700;
-      color: var(--darker);
-      margin-bottom: 60px;
-      text-align: center;
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    h1 span {
-      color: var(--primary);
-      position: relative;
-    }
-    
-    h1 span::after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background-color: rgba(30, 136, 229, 0.3);
-      z-index: -1;
-      border-radius: 5px;
     }
 
     .intro {
@@ -80,191 +45,51 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
-      color: var(--gray);
-      font-family: var(--font-secondary);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .service-card {
       background: #fff;
-      padding: 30px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      transition: var(--transition);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
       text-align: center;
-      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
     }
 
     .service-card img {
-      width: 100%;
-      height: 200px;
+      max-width: 100%;
+      height: 150px;
       object-fit: cover;
-      border-radius: var(--radius-md);
-      margin-bottom: 20px;
-      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 6px;
+      margin-bottom: 1rem;
     }
 
     .service-card h2 {
-      color: var(--darker);
-      margin-bottom: 15px;
-      font-family: var(--font-primary);
-      font-size: 22px;
+      color: #1e88e5;
+      margin-bottom: 0.5rem;
     }
 
     .service-card p {
       font-size: 0.95rem;
-      color: var(--gray);
-      font-family: var(--font-secondary);
-      line-height: 1.6;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      background: var(--darker);
+      padding: 1rem;
+      background: #0d47a1;
       color: #fff;
-      font-family: var(--font-secondary);
-      margin-top: 5rem;
-    }
-
-    /* Header styles to match appointment.html exactly */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: white;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
-    
-    .logo img {
-      height: 50px;
-      transition: var(--transition);
-    }
-    
-    .nav-menu {
-      display: flex;
-      align-items: center;
-    }
-    
-    .nav-links {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .nav-links li {
-      position: relative;
-      margin-left: 30px;
-    }
-    
-    .nav-links a {
-      font-family: var(--font-primary);
-      font-weight: 500;
-      font-size: 15px;
-      color: var(--darker);
-      text-decoration: none;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    
-    .dropdown > a {
-      display: flex;
-      align-items: center;
-    }
-    
-    .dropdown > a i {
-      margin-left: 5px;
-      font-size: 12px;
-      transition: var(--transition);
-    }
-    
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      width: 220px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      z-index: 100;
-      padding: 10px 0;
-      list-style: none;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .dropdown-menu li {
-      margin: 0;
-      padding: 0;
-    }
-    
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 20px;
-      font-size: 14px;
-      color: var(--gray);
-      text-transform: capitalize;
-    }
-    
-    .dropdown-menu a:hover {
-      color: var(--primary);
-      background: var(--primary-light);
-    }
-    
-    .nav-cta .btn {
-      margin-left: 30px;
-      font-size: 14px;
-      padding: 12px 25px;
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      cursor: pointer;
-      width: 30px;
-      height: 20px;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
-    .mobile-menu-btn span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: var(--darker);
-      transition: var(--transition);
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -274,7 +99,7 @@
     <div class="loader"></div>
   </div>
 
-  <!-- Header matching appointment.html exactly -->
+  <!-- Updated Header to match appointment.html -->
   <header class="header">
     <div class="container">
       <nav class="navbar">
@@ -314,39 +139,39 @@
   </header>
 
   <main class="container">
-    <h1>Our <span>Premium</span> Services</h1>
+    <h1>Our Premium Services</h1>
     <div class="intro">
       <p>At Compus India, we deliver a comprehensive range of consulting services to help businesses tackle modern challenges, maximize performance, and unlock growth potential.</p>
     </div>
 
     <section class="services-grid">
-      <div class="service-card" data-aos="fade-up">
-        <img src="assets/images/business-consulting.jpg" alt="Business Consulting">
+      <div class="service-card">
+        <img src="images/business-consulting.jpg" alt="Business Consulting">
         <h2>Business Consulting</h2>
         <p>Optimize your strategies with data-driven insights, operational audits, and industry-specific expertise.</p>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/images/tax-solutions.jpg" alt="Tax Solutions">
+      <div class="service-card">
+        <img src="images/tax-solutions.jpg" alt="Tax Solutions">
         <h2>Tax Solutions</h2>
         <p>End-to-end tax planning, filing, compliance, and advisory services to reduce liabilities and boost profits.</p>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/images/compliance-services.jpg" alt="Compliance Services">
+      <div class="service-card">
+        <img src="images/compliance-services.jpg" alt="Compliance Services">
         <h2>Compliance Services</h2>
         <p>Ensure regulatory compliance with expert support in documentation, filings, and audit preparedness.</p>
       </div>
-      <div class="service-card" data-aos="fade-up">
-        <img src="assets/images/financial-advisory.jpg" alt="Financial Advisory">
+      <div class="service-card">
+        <img src="images/financial-advisory.jpg" alt="Financial Advisory">
         <h2>Financial Advisory</h2>
         <p>Make confident financial decisions with investment strategy, valuation, and wealth management guidance.</p>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/images/startup-services.jpg" alt="Startup Services">
+      <div class="service-card">
+        <img src="images/startup-services.jpg" alt="Startup Services">
         <h2>Startup Services</h2>
         <p>From idea to execution — get assistance with incorporation, funding strategies, and early-stage operations.</p>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/images/custom-solutions.jpg" alt="Custom Solutions">
+      <div class="service-card">
+        <img src="images/custom-solutions.jpg" alt="Custom Solutions">
         <h2>Custom Solutions</h2>
         <p>Receive bespoke business services designed to fit your organization's unique needs and objectives.</p>
       </div>
@@ -362,20 +187,5 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/main.js"></script>
-  
-  <script>
-    // Initialize AOS animation
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-
-    // Mobile menu toggle functionality
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-      this.classList.toggle('active');
-      document.querySelector('.nav-menu').classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
