@@ -209,18 +209,21 @@ section {
 /* Header & Navigation
    ========================================================================== */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: var(--transition);
-    padding: 1.5rem 0;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height); /* Add this line */
+  z-index: 1000;
+  padding: 0 0; /* optional: remove vertical padding */
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
+
 
 .header.scrolled {
     padding: 1rem 0;
@@ -385,7 +388,7 @@ section {
     align-items: center;
     background: linear-gradient(135deg, rgba(245, 158, 11, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
     overflow: hidden;
-    margin-top: calc(var(--header-height) * -1);
+    margin-top: 0;
     padding-top: var(--header-height);
 }
 
@@ -399,7 +402,7 @@ section {
     background: url('../images/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     z-index: -1;
-    border-bottom-left-radius: 100px;
+    border-bottom-left-radius: 100px; 
 }
 
 .hero-content {
