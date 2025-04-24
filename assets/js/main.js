@@ -1,6 +1,47 @@
-// Mobile Menu Toggle
-document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
-    document.querySelector('.main-nav').classList.toggle('active');
+// Preloader
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    preloader.style.opacity = '0';
+    preloader.style.visibility = 'hidden';
+    
+    // Remove from DOM after animation completes
+    setTimeout(() => {
+        preloader.remove();
+    }, 500);
+});
+
+// Initialize AOS animation library
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+});
+
+// Back to top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+});
+
+backToTop.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenuBtn.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navMenu.classList.toggle('active');
 });
 
 // Smooth Scroll
