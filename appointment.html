@@ -441,24 +441,7 @@
         }
       }
       
-      // Form submission handler
-      document.getElementById('appointment-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate time slot selection
-        if (!document.getElementById('selected_time').value) {
-          alert('Please select an available time slot');
-          return;
-        }
-        
-        // Show success message
-        document.getElementById('appointment-section').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        
-        // Here you would typically send the form data to your server
-        const formData = new FormData(this);
-        console.log('Appointment details:', Object.fromEntries(formData));
-      });
+     
     });
   </script>
 </body>
