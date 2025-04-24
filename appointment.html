@@ -329,6 +329,29 @@
       margin-right: 8px;
     }
     
+    /* Form Messages */
+    .form-success, .form-error {
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .form-success {
+      background-color: #f0fff4;
+      color: #2f855a;
+    }
+    
+    .form-error {
+      background-color: #fff5f5;
+      color: #c53030;
+    }
+    
+    .form-success i, .form-error i {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
     /* Responsive Styles */
     @media (max-width: 992px) {
       .appointment-container {
@@ -356,6 +379,14 @@
       
       main {
         padding: 150px 0 80px;
+      }
+      
+      .main-nav ul {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
       }
     }
     
@@ -465,24 +496,101 @@
     </div>
   </main>
 
-  <!-- Load EmailJS and main.js -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="assets/js/main.js"></script>
   
-  <!-- Inline script to verify connection -->
   <script>
-    // Verify main.js is loaded
+    // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof emailjs !== 'undefined') {
-        console.log('EmailJS loaded successfully');
-      } else {
-        console.error('EmailJS not loaded - check CDN URL');
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          document.querySelector('.main-nav').classList.toggle('active');
+        });
       }
+
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Scroll Animations
+      window.addEventListener('scroll', () => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+          if(el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add('active');
+          }
+        });
+      });
+
+      // Initialize EmailJS
+      emailjs.init('6CPHqFDm-JiJAv4DJ');
       
-      if (typeof handleAppointmentSubmit !== 'undefined') {
-        console.log('main.js functions available');
-      } else {
-        console.warn('main.js functions not found - check file path');
+      // Form Handling
+      const appointmentForm = document.getElementById('appointment-form');
+      
+      if (appointmentForm) {
+        appointmentForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.textContent;
+          
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          
+          // Send form data
+          emailjs.sendForm(
+            'service_rrhyyif',
+            'template_mhm8y7f',
+            this
+          )
+          .then(() => {
+            // Hide form and show success message
+            document.getElementById('appointment-section').style.display = 'none';
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            successMessage.style.animation = 'fadeInUp 0.8s forwards';
+            
+            // Reset form
+            appointmentForm.reset();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'form-error';
+            errorMsg.innerHTML = `
+              <i class="fas fa-exclamation-circle"></i>
+              <p>Failed to send request. Please try again or contact us directly.</p>
+            `;
+            appointmentForm.parentNode.insertBefore(errorMsg, appointmentForm.nextSibling);
+            
+            setTimeout(() => {
+              errorMsg.remove();
+            }, 5000);
+          })
+          .finally(() => {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          });
+        });
+      }
+
+      // Set minimum date for date input
+      const dateInput = document.querySelector('input[type="date"]');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
       }
     });
   </script>
