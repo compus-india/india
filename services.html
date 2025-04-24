@@ -13,6 +13,39 @@
       color: #333;
     }
 
+    /* NAVIGATION BAR */
+    .navbar {
+      background-color: #0d47a1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      color: #ffeb3b;
+    }
+
     header {
       background-color: #0d47a1;
       color: #fff;
@@ -48,10 +81,19 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: transform 0.3s;
+      text-align: center;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
+    }
+
+    .service-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
     }
 
     .service-card h2 {
@@ -70,9 +112,35 @@
       color: #fff;
       margin-top: 3rem;
     }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#"><img src="images/logo.png" alt="Compus India Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
   <header>
     <h1>Our Premium Services</h1>
@@ -86,26 +154,32 @@
 
     <section class="services-grid">
       <div class="service-card">
+        <img src="images/business-consulting.jpg" alt="Business Consulting">
         <h2>Business Consulting</h2>
         <p>Optimize your strategies with data-driven insights, operational audits, and industry-specific expertise.</p>
       </div>
       <div class="service-card">
+        <img src="images/tax-solutions.jpg" alt="Tax Solutions">
         <h2>Tax Solutions</h2>
         <p>End-to-end tax planning, filing, compliance, and advisory services to reduce liabilities and boost profits.</p>
       </div>
       <div class="service-card">
+        <img src="images/compliance-services.jpg" alt="Compliance Services">
         <h2>Compliance Services</h2>
         <p>Ensure regulatory compliance with expert support in documentation, filings, and audit preparedness.</p>
       </div>
       <div class="service-card">
+        <img src="images/financial-advisory.jpg" alt="Financial Advisory">
         <h2>Financial Advisory</h2>
         <p>Make confident financial decisions with investment strategy, valuation, and wealth management guidance.</p>
       </div>
       <div class="service-card">
+        <img src="images/startup-services.jpg" alt="Startup Services">
         <h2>Startup Services</h2>
         <p>From idea to execution — get assistance with incorporation, funding strategies, and early-stage operations.</p>
       </div>
       <div class="service-card">
+        <img src="images/custom-solutions.jpg" alt="Custom Solutions">
         <h2>Custom Solutions</h2>
         <p>Receive bespoke business services designed to fit your organization's unique needs and objectives.</p>
       </div>
