@@ -10,6 +10,11 @@ window.addEventListener('load', function() {
     }, 500);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.documentElement.classList.add('loaded');
+});
+
+
 // Initialize AOS animation library
 AOS.init({
     duration: 800,
