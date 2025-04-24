@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Compus India</title>
-  <!-- Use the same assets as appointment.html -->
+  <!-- Use the same assets as index.html -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,8 +18,56 @@
       background: var(--light);
     }
 
+    /* Navigation Bar Fixes */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      margin-right: 30px;
+    }
+    
+    .nav-links li {
+      position: relative;
+    }
+    
+    .nav-links a {
+      color: var(--darker);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
     main {
-      padding: 180px 0 100px;
+      padding: 150px 0 100px;
     }
 
     .container {
@@ -108,7 +156,15 @@
       color: var(--darker);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
       .about-section {
         flex-direction: column;
         padding: 2rem;
@@ -117,10 +173,20 @@
       .about-text, .about-image {
         flex: 1 1 100%;
       }
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 120px 0 80px;
+      }
       
       .stats {
         flex-direction: column;
         gap: 1rem;
+      }
+      
+      .logo img {
+        height: 40px;
       }
     }
   </style>
@@ -131,7 +197,7 @@
     <div class="loader"></div>
   </div>
 
-  <!-- Updated Header to match appointment.html -->
+  <!-- Updated Header with fixed positioning -->
   <header class="header">
     <div class="container">
       <nav class="navbar">
@@ -171,10 +237,10 @@
   </header>
 
   <main class="container">
-    <h1>About Compus India</h1>
-    <p class="page-intro">Delivering expert business solutions since 2008</p>
+    <h1 data-aos="fade-up">About Compus India</h1>
+    <p class="page-intro" data-aos="fade-up" data-aos-delay="100">Delivering expert business solutions since 2008</p>
 
-    <section class="about-section" data-aos="fade-up">
+    <section class="about-section" data-aos="fade-up" data-aos-delay="200">
       <div class="about-text">
         <h2>Who We Are</h2>
         <p>
@@ -184,21 +250,21 @@
           Our team comprises industry veterans, chartered accountants, and technology experts. Together, we ensure that our clients not only meet their compliance needs but also thrive in today's competitive business environment.
         </p>
         <div class="stats">
-          <div class="stat">
+          <div class="stat" data-aos="fade-up" data-aos-delay="300">
             <h3>200+</h3>
             <p>Clients Served</p>
           </div>
-          <div class="stat">
+          <div class="stat" data-aos="fade-up" data-aos-delay="400">
             <h3>15+</h3>
             <p>Years of Experience</p>
           </div>
-          <div class="stat">
+          <div class="stat" data-aos="fade-up" data-aos-delay="500">
             <h3>50+</h3>
             <p>Industry Awards</p>
           </div>
         </div>
       </div>
-      <div class="about-image" data-aos="fade-left">
+      <div class="about-image" data-aos="fade-left" data-aos-delay="300">
         <img src="https://via.placeholder.com/500x350.png?text=Our+Team" alt="Our Team">
       </div>
     </section>
@@ -208,7 +274,7 @@
     &copy; 2025 Compus India. All Rights Reserved.
   </footer>
 
-  <!-- Scripts - Same as appointment.html -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -221,6 +287,12 @@
         duration: 800,
         easing: 'ease-in-out',
         once: true
+      });
+      
+      // Mobile menu toggle
+      $('#mobile-menu-btn').click(function() {
+        $('.nav-menu').toggleClass('active');
+        $(this).toggleClass('active');
       });
     });
   </script>
