@@ -394,7 +394,7 @@
         const day = date.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
         
         // Check if date is valid and a working day (Monday to Saturday)
-        if (!selectedDate || isNaN(date.getTime()) {
+        if (!selectedDate || isNaN(date.getTime())) {
           timeSlotsContainer.innerHTML = '<p class="unavailable">Please select a valid date</p>';
           return;
         }
