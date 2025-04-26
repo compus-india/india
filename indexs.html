@@ -22,112 +22,132 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <style>
-    /* Contact Section */
-    .contact-modern {
-      padding: 60px 20px;
-      background: #f8fafc;
-    }
+        .nulltest p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        /* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .contact-modern h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #1e293b;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  line-height: 1.6;
+}
 
-    .contact-modern h1 span {
-      color: #3b82f6;
-    }
+/* Contact Section */
+.contact-modern {
+  padding: 60px 20px;
+  background: #f8fafc;
+}
 
-    .contact-modern p {
-      font-size: 1rem;
-      color: #475569;
-    }
+.contact-modern h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1e293b;
+}
 
-    .contact-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-    }
+.contact-modern h1 span {
+  color: #3b82f6;
+}
 
-    .contact-header {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.contact-modern p {
+  font-size: 1rem;
+  color: #475569;
+}
 
-    .contact-details,
-    .contact-form {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    }
+.contact-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
 
-    .contact-details h3,
-    .contact-form h3 {
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      color: #0f172a;
-    }
+.contact-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .contact-details p,
-    .contact-details a {
-      margin-bottom: 10px;
-      color: #334155;
-      text-decoration: none;
-    }
+.contact-details,
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
 
-    .contact-details a:hover {
-      text-decoration: underline;
-      color: #3b82f6;
-    }
+.contact-details h3,
+.contact-form h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
 
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+.contact-details p,
+.contact-details a {
+  margin-bottom: 10px;
+  color: #334155;
+  text-decoration: none;
+}
 
-    .contact-form input,
-    .contact-form textarea {
-      padding: 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      font-size: 1rem;
-      background: #f9fafb;
-      transition: 0.3s ease;
-    }
+.contact-details a:hover {
+  text-decoration: underline;
+  color: #3b82f6;
+}
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #3b82f6;
-      outline: none;
-      background: #ffffff;
-    }
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: 0.3s ease;
+}
 
-    .contact-form button {
-      background: #3b82f6;
-      color: #ffffff;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background: #ffffff;
+}
 
-    .contact-form button:hover {
-      background: #2563eb;
-    }
-  </style>
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+}
+
+    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -174,14 +194,15 @@
         </div>
     </header>
 
-        <!-- contact -->
+    
+    <!-- contact -->
     <section class="contact-modern">
-  <div class="contact-grid">
-    <div class="contact-header">
-      <h1>Get in Touch with <span>Compus India</span></h1>
-      <p>We make business consulting simple and accessible. Reach out for expert advice, tailored solutions, or just a friendly hello!</p>
-    </div>
+  <div class="contact-header">
+    <h1>Get in Touch with <span>Compus India</span></h1>
+    <p>We make business consulting simple and accessible. Let's connect and grow together!</p>
+  </div>
 
+  <div class="contact-grid">
     <div class="contact-form">
       <h3>📬 Quick Contact Form</h3>
       <form>
@@ -194,26 +215,25 @@
     </div>
 
     <div class="contact-details">
-      <h3>📞 Contact</h3>
-      <p><strong>Phone:</strong> +91 9546900755</p>
+      <h3>📞 Contact Information</h3>
+      <p><strong>Phone:</strong> <a href="tel:+919546900755">+91 9546900755</a></p>
       <p><strong>Email:</strong> <a href="mailto:infocompus2@gmail.com">infocompus2@gmail.com</a></p>
-      <p><strong>Hours:</strong> Mon–Fri, 9AM–6PM</p>
+      <p><strong>Hours:</strong> Mon – Fri, 9AM – 6PM</p>
 
       <h3>🏢 Office Address</h3>
-      <p>Compus Business Consulting Services Private Limited<br>
+      <p>Compus Business Consulting Services Private Limited,<br>
       Mukkam Road, Kunnamangalam - 673571,<br>
       Kozhikode, Kerala, India</p>
-
-      <h3>📍 Office Location</h3>
-      <p><a href="https://www.google.com/maps?q=Mukkam+Road,+Kunnamangalam,+Kozhikode,+Kerala,+India" target="_blank">
-        View on Google Maps
-      </a></p>
     </div>
+  </div>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.151741807475!2d75.8994469748938!3d11.300793150964007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65f2320cb0a05%3A0xe12f3de22e6eb94b!2sMukkam%20Rd%2C%20Kunnamangalam%2C%20Kerala%20673571!5e0!3m2!1sen!2sin!4v1714146301469!5m2!1sen!2sin"
+      loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
     <!-- Footer -->
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
