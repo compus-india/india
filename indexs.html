@@ -22,11 +22,71 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <style>
-        .nulltest p {
-            color: #64748b;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+.about-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--lighter-gray);
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: var(--darker);
+  margin-bottom: 1.25rem;
+}
+
+.about-text h2 span {
+  color: var(--primary);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+}
+
+.about-highlights li {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-highlights i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
     </style>
 </head>
 <body>
@@ -74,7 +134,31 @@
         </div>
     </header>
 
-   
+   <section class="about-section">
+  <div class="container">
+    <div class="about-wrapper">
+      <div class="about-text">
+        <h2>About <span>Compus India</span></h2>
+        <p>
+          We are a forward-thinking business consulting firm helping Indian businesses simplify complexity and unlock growth. 
+          From startups to enterprises, our strategies are built on clarity, compliance, and long-term value.
+        </p>
+
+        <ul class="about-highlights">
+          <li><i class="fas fa-check-circle"></i> 10+ Years of Industry Expertise</li>
+          <li><i class="fas fa-check-circle"></i> Trusted by 500+ Businesses</li>
+          <li><i class="fas fa-check-circle"></i> End-to-End Tax & Compliance Solutions</li>
+          <li><i class="fas fa-check-circle"></i> Personalized Financial Advisory</li>
+        </ul>
+      </div>
+
+      <div class="about-image">
+        <img src="assets/images/about-modern.jpg" alt="Team working together at Compus">
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
