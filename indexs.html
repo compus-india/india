@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US | COMPUS INDIA - Business & Tax Consulting Services</title>
+    <meta name="description" content="Professional business consulting and tax optimization services for growing enterprises">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Inline CSS just for Services Section -->
+    <style>
+        .services-section {
+            background-color: var(--lighter-gray);
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-card:hover::before {
+            height: 100%;
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px; /* or any height you prefer */
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+        .service-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+        }
+        .service-card p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/compus-logo.png" alt="Compus India Logo">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">HOME</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">SERVICES <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services/business-consulting.html">BUSINESS CONSULTING</a></li>
+                                <li><a href="services/tax-solutions.html">TAX SOLUTIONS</a></li>
+                                <li><a href="services/financial-advisory.html">FINANCIAL ADVISORY</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html" class="active">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                    
+                    <div class="nav-cta">
+                        <a href="appointment.html" class="btn btn-primary">GET CONSULTATION</a>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p class="subheading">Comprehensive solutions tailored to your business needs</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="assets/images/photo6.jpg" alt="Business Consulting">
+                    <h2>Business Consulting</h2>
+                    <p>Optimize your strategies with data-driven insights, operational audits, and industry-specific expertise.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_5_2025-04-24_22-32-04.jpg" alt="Tax Solutions">
+                    <h2>Tax Solutions</h2>
+                    <p>End-to-end tax planning, filing, compliance, and advisory services to reduce liabilities and boost profits.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_4_2025-04-24_22-32-04.jpg" alt="Compliance Services">
+                    <h2>Compliance Services</h2>
+                    <p>Ensure regulatory compliance with expert support in documentation, filings, and audit preparedness.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_3_2025-04-24_22-32-04.jpg" alt="Financial Advisory">
+                    <h2>Financial Advisory</h2>
+                    <p>Make confident financial decisions with investment strategy, valuation, and wealth management guidance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_2_2025-04-24_22-32-04.jpg" alt="Startup Services">
+                    <h2>Startup Services</h2>
+                    <p>From idea to execution — get assistance with incorporation, funding strategies, and early-stage operations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_1_2025-04-24_22-32-04.jpg" alt="Custom Solutions">
+                    <h2>Custom Solutions</h2>
+                    <p>Receive bespoke business services designed to fit your organization's unique needs and objectives.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_1_2025-04-24_22-32-04.jpg" alt="Custom Solutions">
+                    <h2>Digital Transformation</h2>
+                    <p>Streamline your business operations with the latest digital tools and automation strategies tailored for scalability and growth.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_1_2025-04-24_22-32-04.jpg" alt="Custom Solutions">
+                    <h2>Market Research & Analysis</h2>
+                    <p>Gain a competitive edge with in-depth market insights, customer profiling, and trend analysis to guide smarter business decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Compus</h4>
+                    <img src="assets/images/compus-logo.png" alt="Compus India" class="footer-logo">
+                    <p>Professional business consulting and tax advisory services to help your business thrive.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services/business-consulting.html">BUSINESS CONSULTING</a></li>
+                        <li><a href="services/tax-solutions.html">TAX SOLUTIONS</a></li>
+                        <li><a href="services/financial-advisory.html">FINANCIAL ADVISORY</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Compus Business Consulting Services Private Limited, Mukkam Road, Kunnamangalam - 673571, Kozhikode, Kerala, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919546900755">+91 9546900755</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:infocompus2@gmail.com">infocompus2@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2017 COMPUS INDIA. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
