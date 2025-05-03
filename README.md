@@ -1,1 +1,1 @@
-https://BXBOTZ2021.github.io/india/
+https://compus-india.github.io/india/
