@@ -71,6 +71,16 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Mobile dropdown toggle
+document.querySelectorAll('.dropdown-submenu > a').forEach(function(element) {
+  element.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      const submenu = this.nextElementSibling;
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
 // EmailJS Initialization and Form Handling
 (function() {
     // Initialize EmailJS with your User ID
