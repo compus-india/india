@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICES | COMPUS INDIA - Business & Tax Consulting Services</title>
+    <meta name="description" content="Professional business consulting and tax optimization services for growing enterprises">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Inline CSS just for Services Section -->
+    <style>
+        .services-section {
+            background-color: var(--lighter-gray);
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-card:hover::before {
+            height: 100%;
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px; /* or any height you prefer */
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+        .service-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+        }
+        .service-card p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/compus-logo.png" alt="Compus India Logo">
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="active">SERVICES <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <!-- Business Consulting Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/business-consulting.html">BUSINESS CONSULTING <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/business-consulting/strategy.html">Business Strategy</a></li>
+                                    <li><a href="services/business-consulting/operations.html">Operations</a></li>
+                                    <li><a href="services/business-consulting/market-research.html">Market Research</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Tax Solutions Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/tax-solutions.html">TAX SOLUTIONS <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/tax-solutions/individual-tax.html">Individual Tax</a></li>
+                                    <li><a href="services/tax-solutions/corporate-tax.html">Corporate Tax</a></li>
+                                    <li><a href="services/tax-solutions/tax-planning.html">Tax Planning</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Financial Advisory Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/financial-advisory.html">FINANCIAL ADVISORY <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/financial-advisory/investment.html">Investment Advisory</a></li>
+                                    <li><a href="services/financial-advisory/wealth.html">Wealth Management</a></li>
+                                    <li><a href="services/financial-advisory/valuation.html">Business Valuation</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Startup Services Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/startup-services.html">STARTUP SERVICES <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/startup-services/incorporation.html">Incorporation</a></li>
+                                    <li><a href="services/startup-services/funding.html">Funding Assistance</a></li>
+                                    <li><a href="services/startup-services/compliance.html">Startup Compliance</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Auditing Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/auditing.html">AUDITING <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/auditing/statutory.html">Statutory Audit</a></li>
+                                    <li><a href="services/auditing/internal.html">Internal Audit</a></li>
+                                    <li><a href="services/auditing/tax-audit.html">Tax Audit</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Income Tax Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/income-tax.html">INCOME TAX <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/income-tax/itr-filing.html">ITR Filing</a></li>
+                                    <li><a href="services/income-tax/tds-returns.html">TDS Returns</a></li>
+                                    <li><a href="services/income-tax/notice.html">Notice Handling</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- GST Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/gst.html">GST <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/gst/registration.html">GST Registration</a></li>
+                                    <li><a href="services/gst/returns.html">GST Returns</a></li>
+                                    <li><a href="services/gst/refunds.html">GST Refunds</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Registration Dropdown -->
+                            <li class="dropdown-submenu">
+                                <a href="services/registration.html">REGISTRATION <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-submenu">
+                                    <li><a href="services/registration/company.html">Company Registration</a></li>
+                                    <li><a href="services/registration/llp.html">LLP Registration</a></li>
+                                    <li><a href="services/registration/trademark.html">Trademark</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="services.html">MORE SERVICES➜</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="appointment.html" class="btn btn-primary">GET CONSULTATION</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p class="subheading">Comprehensive solutions tailored to your business needs</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="assets/images/photo6.jpg" alt="Business Consulting">
+                    <h2>Business Consulting</h2>
+                    <p>Optimize your strategies with data-driven insights, operational audits, and industry-specific expertise.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_5_2025-04-24_22-32-04.jpg" alt="Tax Solutions">
+                    <h2>Tax Solutions</h2>
+                    <p>End-to-end tax planning, filing, compliance, and advisory services to reduce liabilities and boost profits.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_4_2025-04-24_22-32-04.jpg" alt="Compliance Services">
+                    <h2>Compliance Services</h2>
+                    <p>Ensure regulatory compliance with expert support in documentation, filings, and audit preparedness.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_3_2025-04-24_22-32-04.jpg" alt="Financial Advisory">
+                    <h2>Financial Advisory</h2>
+                    <p>Make confident financial decisions with investment strategy, valuation, and wealth management guidance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/photo_2_2025-04-24_22-32-04.jpg" alt="Startup Services">
+                    <h2>Startup Services</h2>
+                    <p>From idea to execution — get assistance with incorporation, funding strategies, and early-stage operations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Company-Incorporation.jpg" alt="Company Incorporation">
+                    <h2>Company Incorporation</h2>
+                    <p>We handle LLC, Corporation, and Partnership registrations—from name approval to filings and compliance. Fast, accurate, and stress-free.</p>
+                </div>
+
+
+
+
+                
+                <div class="service-card">
+                    <img src="assets/images/Project-Report-Preparation.jpg" alt="Project Report Preparation">
+                    <h2>Project Report Preparation</h2>
+                    <p>We craft detailed project reports (DPR) for banks, investors, and government schemes—covering feasibility, financials, and projections. Ensures funding approval and strategic clarity.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Bookkeeping-Services.jpg" alt="Bookkeeping Services">
+                    <h2>Bookkeeping Services</h2>
+                    <p>Daily/monthly tracking of income, expenses, and invoices. Cloud-based or manual systems tailored to your business size.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Accounting-&-Financial-Reporting.jpg" alt="Accounting & Financial Reporting">
+                    <h2>Accounting & Financial Reporting</h2>
+                    <p>Balance sheets, P&L statements, and cash flow reports. Compliant with accounting standards (Ind AS/GAAP).</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Individual-Tax-Planning.jpg" alt="Individual Tax Planning">
+                    <h2>Individual Tax Planning</h2>
+                    <p>Maximize savings, minimize liabilities.Custom strategies for salary, investments, and capital gains. Ideal for professionals, freelancers, and HNIs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Income-Tax.jpg" alt="Income Tax Return (ITR) Filing">
+                    <h2>Income Tax Return (ITR) Filing</h2>
+                    <p>Timely, error-free filings.ITR-1 to ITR-7 for individuals, businesses, and trusts. E-filing with expert verification.</p>
+                </div>
+
+                
+                <div class="service-card">
+                    <img src="assets/images/Income-Tax-Notice.jpg" alt="Income Tax Notice Support">
+                    <h2> Income Tax Notice Support</h2>
+                    <p>Stress-free resolution.Respond to scrutiny, 143(1), or 148 notices. Draft replies and represent you before the IT department.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/tds-tcs.jpg" alt="TDS/TCS Returns">
+                    <h2>TDS/TCS Returns</h2>
+                    <p>Avoid penalties with accurate filings.Quarterly TDS/TCS returns (Form 24Q, 26Q, 27Q) and certificate generation.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/return-fillings.jpg" alt="GST Return Filings">
+                    <h2>GST Return Filings</h2>
+                    <p>"On-time GSTR-1, 3B, 9, and CMP-08". Reconciliation, input tax credit (ITC) claims, and error-free submissions.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/gst-registration.jpg" alt="GST Registration">
+                    <h2>GST Registration</h2>
+                    <p>*Fast-tracked in 3–5 days".New registrations, amendments, and voluntary cancellations.</p>
+                </div>
+
+                
+                <div class="service-card">
+                    <img src="assets/images/audit.jpg" alt="GST Annual Return & Audit Support">
+                    <h2>GST Annual Return & Audit Support</h2>
+                    <p>We assist businesses with annual return filing and GSTR-9C reconciliation, ensuring complete accuracy and documentation</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (4).jpg" alt="GST Notice Support">
+                    <h2>GST Notice Support</h2>
+                    <p>We represent clients in responding to GST notices such as ASMT-10, DRC-01, and summons, helping to resolve mismatches, input tax credit disputes, or any compliance concerns.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (5).jpg" alt="Trademark Registration">
+                    <h2>Trademark Registration</h2>
+                    <p>From conducting thorough trademark searches to filing applications (Form TM-A) and monitoring the registration process, we help protect your brand across relevant classes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (7).jpg" alt="Patent Registration">
+                    <h2>Patent Registration</h2>
+                    <p>Our team helps with patent searches, drafting of Form 1-5, and navigating the filing process with patent agents for a seamless registration experience.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (8).jpg" alt="Agreement Drafting">
+                    <h2>Agreement Drafting</h2>
+                    <p>Whether it's for partnerships, NDAs, vendor contracts, or joint ventures, we provide professionally drafted agreements that stand up to scrutiny.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (9).jpg" alt="FSSAI Registration">
+                    <h2>FSSAI Registration</h2>
+                    <p>We guide you through Basic, State, or Central FSSAI licensing based on turnover, along with packaging and labeling compliance to meet safety regulations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (10).jpg" alt="Copyright Registration">
+                    <h2>Copyright Registration</h2>
+                    <p>We assist in registering copyrights for software, books, music, and other intellectual assets through proper documentation and Form XIV filing.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (11).jpg" alt="Import/Export License (IEC)">
+                    <h2>Import/Export License (IEC)</h2>
+                    <p>Get your Importer Exporter Code (IEC) issued within a day, along with compliance support from DGFT to customs documentation for smooth cross-border trade.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (14).jpg" alt=" ESI & PF Registration/Compliance">
+                    <h2> ESI & PF Registration/Compliance</h2>
+                    <p>We handle complete ESI and PF registration, monthly filings, and challan payments—keeping your business compliant with employee welfare regulations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (12).jpg" alt="Payroll Management">
+                    <h2>Payroll Management</h2>
+                    <p>We offer both software-based and fully managed payroll services that cover salary disbursal, leave management, tax deductions, and statutory filings.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (15).jpg" alt="Design Registration">
+                    <h2>Design Registration</h2>
+                    <p>Complete assistance for protecting your unique product designs through official registration.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (16).jpg" alt="LLP/Partnership Registration ">
+                    <h2>LLP/Partnership Registration </h2>
+                    <p>End-to-end support for legally establishing your business entity with all required documentation</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (17).jpg" alt="Society/Trust (NGO) Registration ">
+                    <h2>Society/Trust (NGO) Registration </h2>
+                    <p>Expert guidance for registering non-profit organizations with proper compliance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (18).jpg" alt="ISO/ISI Certification">
+                    <h2>ISO/ISI Certification</h2>
+                    <p>Comprehensive help in obtaining quality certifications to enhance your business credibility</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (19).jpg" alt="Business Agreements">
+                    <h2>Business Agreements</h2>
+                    <p>Professional drafting and vetting of contracts to protect your commercial interests</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (20).jpg" alt="Digital Signature Services">
+                    <h2>Digital Signature Services</h2>
+                    <p>Quick and reliable procurement of legally valid digital signatures for online transactions</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (21).jpg" alt="Statutory/Internal Audit">
+                    <h2>Statutory/Internal Audit</h2>
+                    <p>Thorough financial examination services to ensure regulatory compliance and best practices</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Blue Minimalist Financial Consulting Agency Logo (22).jpg" alt="PAN/TAN Services">
+                    <h2>PAN/TAN Services</h2>
+                    <p>Efficient processing of essential tax registration documents for businesses and individuals</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Compus</h4>
+                    <img src="assets/images/compus-logo.png" alt="Compus India" class="footer-logo">
+                    <p>Professional business consulting and tax advisory services to help your business thrive.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services/business-consulting.html">BUSINESS CONSULTING</a></li>
+                        <li><a href="services/tax-solutions.html">TAX SOLUTIONS</a></li>
+                        <li><a href="services/financial-advisory.html">FINANCIAL ADVISORY</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Compus Business Consulting Services Private Limited, Mukkam Road, Kunnamangalam - 673571, Kozhikode, Kerala, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919546900755">+91 9546900755</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:infocompus2@gmail.com">infocompus2@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2017 COMPUS INDIA. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
