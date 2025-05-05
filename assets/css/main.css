@@ -163,66 +163,30 @@ section {
     opacity: 1;
     visibility: visible;
 }
-/* Dropdown Base Styles */
-.dropdown-menu {
-  position: absolute;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  min-width: 220px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
 
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Submenu Styles */
+/* Submenu Styling */
 .dropdown-submenu {
-  position: relative;
+    position: relative;
 }
 
 .dropdown-submenu > .dropdown-submenu {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
 .dropdown-submenu:hover > .dropdown-submenu {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Single-Line Text Enforcement */
-.dropdown-menu li a,
-.dropdown-submenu li a {
-  white-space: nowrap;
-  padding: 8px 20px;
-  display: block;
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Chevron Icons */
 .dropdown-submenu > a > .fa-chevron-right {
-  margin-left: 8px;
-  font-size: 12px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Mobile Compatibility */
-@media (max-width: 992px) {
-  .dropdown-submenu > .dropdown-submenu {
-    left: 15px;
-    top: auto;
-  }
+    float: right;
+    padding-top: 5px;
 }
 .section-header h2 {
     position: relative;
